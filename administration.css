@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-/* Full-screen Deep Navy Blue Canvas */
 body {
     background-color: #0a192f;
     min-height: 150vh;
@@ -13,35 +12,33 @@ body {
     width: 100%;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: #e2e8f0;
-    overflow-x: hidden; /* Crucial to prevent horizontal scroll bars during push mechanics */
+    overflow-x: hidden;
 }
 
-/* --- HEADER SECTION (Exactly 100px Height) --- */
 .admin-header {
     height: 100px;
     width: 100%;
     background-color: #020c1b;
     display: flex;
-    align-items: flex-start; /* Allows top margin-based alignment */
+    align-items: flex-start;
     padding: 0;
     border-bottom: 1px solid #1e293b;
     position: relative;
 }
 
-/* Left Stack: Circle Logo & Menu Button (Totaling 100px) */
 .header-left {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50px;
-    margin-left: 5px;   /* Gap from left edge does not pass 5px */
-    margin-right: 10px; /* Gap between logo/controls and vertical line */
+    margin-left: 5px;
+    margin-right: 10px;
 }
 
 .logo-circle {
-    width: 60px;        /* Exact 50px width */
-    height: 60px;       /* Exact 50px height */
-    margin-top: 5px;    /* Gap of 5px from upper part of the page */
+    width: 60px;
+    height: 60px;
+    margin-top: 5px;
     border-radius: 50%;
     border: 2px solid #00f0ff;
     display: flex;
@@ -57,11 +54,10 @@ body {
     stroke: #00f0ff;
 }
 
-/* Navigation Side Bar Toggle */
 .nav-toggle {
-    height: 40px;       /* Consumes the exact 40px remaining */
+    height: 40px;
     width: 100%;
-    margin-top: 2px;    /* Gap of 5px below the logo circle */
+    margin-top: 2px;
     background: none;
     border: none;
     cursor: pointer;
@@ -79,17 +75,15 @@ body {
     border-radius: 2px;
 }
 
-/* Vertical Separation Line */
 .vertical-divider {
     width: 5px;
     height: 100px;
-    margin-top: 0px;   /* Vertically centers the line within the 100px header */
+    margin-top: 0px;
     background-color: #1e293b;
     margin-right: 30px;
-    margin-left:10px;   /* 10px gap between vertical line and website name */
+    margin-left:10px;
 }
 
-/* Right Side Main Area (Stacked Layout: Title top, Search bottom) */
 .header-main {
     display: flex;
     flex-direction: column;
@@ -97,25 +91,24 @@ body {
 }
 
 .brand-title {
-    height: 30px;       /* Exact 30px height */
-    margin-top: 10px;   /* Gap of 10px from the top */
+    height: 30px;
+    margin-top: 10px;
     font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 1px;
     color: #ffffff;
-    line-height: 30px;  /* Centers text vertically within its 30px boundary */
+    line-height: 30px;
 }
 
-/* Rainbow Glowing Search Bar Container */
 .search-container {
     position: relative;
-    height: 20px;       /* Exact 20px height */
-    margin-top: 20px;   /* Gap of 20px between website name and search bar */
+    height: 20px;
+    margin-top: 20px;
     width: 100%;
     max-width: 150px; 
-    text-align: center;    /* Set clean half-width boundaries so it doesn't surpass title */
+    text-align: center;
     border-radius: 10px;
-    padding: 1.5px;     /* Tightened border wrap for thin 20px profile */
+    padding: 1.5px;
     background: linear-gradient(90deg, #ff0055, #7f00ff, #00bfff, #ff00aa, #ffcc00, #ff0055);
     background-size: 400%;
     animation: rainbow-shift 8s linear infinite;
@@ -146,7 +139,6 @@ body {
     font-size: 0.75rem;
 }
 
-/* --- FOOTER SECTION --- */
 .admin-footer {
     height: 80px;
     width: 100%;
@@ -167,14 +159,12 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* --- ANIMATIONS --- */
 @keyframes rainbow-shift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Base stack layout for the right column elements */
 .header-right {
     position: absolute;
     top: 0;
@@ -185,16 +175,14 @@ body {
     align-items: flex-end;
 }
 
-/* Yellow Coded Notification Bell Setup */
 .notification-bell {
     height: 30px;
     width: 20px;
     margin-top: 5px;
     margin-right: 30px;
-    color: #ffcc00; /* Vibrant administration yellow */
+    color: #ffcc00;
 }
 
-/* Circular Admin Profile Picture Framework */
 .admin-profile-circle {
     height: 30px;
     width: 30px;
@@ -212,22 +200,20 @@ body {
     object-fit: cover;
 }
 
-/* Horizontal Name & Status Row spacing components */
 .admin-meta-row {
     display: flex;
     align-items: center;
     gap: 6px;
     margin-top: 5px;
     margin-right: 10px;
-    margin-bottom: 10px; /* Exact 10px gap remaining to ground baseline space */
+    margin-bottom: 10px;
 }
 
-/* Rainbow Glow Border Line for Admin Name Section */
 .admin-name-glow {
     width: 50px;
     height: 10px;
     border-radius: 3px;
-    padding: 1px; /* Controls border thickness */
+    padding: 1px;
     background: linear-gradient(90deg, #ff0055, #7f00ff, #00bfff, #ff00aa, #ffcc00, #ff0055);
     background-size: 400%;
     animation: rainbow-shift 8s linear infinite;
@@ -236,10 +222,10 @@ body {
 .admin-name-box {
     width: 100%;
     height: 100%;
-    background-color: #020c1b; /* Matches header background to show inner text cleanly */
+    background-color: #020c1b;
     border-radius: 2px;
     font-size: 7px;
-    line-height: 8px; /* Perfectly aligns text inside the 8px remaining height */
+    line-height: 8px;
     color: #e2e8f0;
     font-weight: 500;
     text-align: center;
@@ -248,12 +234,11 @@ body {
     text-overflow: ellipsis;
 }
 
-/* Rainbow Glow Border Line for Status Section */
 .admin-status-glow {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    padding: 1px; /* Controls border thickness */
+    padding: 1px;
     background: linear-gradient(90deg, #ff0055, #7f00ff, #00bfff, #ff00aa, #ffcc00, #ff0055);
     background-size: 400%;
     animation: rainbow-shift 8s linear infinite;
@@ -266,46 +251,36 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: #00ff66; /* Active live status color profile */
+    background-color: #00ff66;
     box-shadow: 0 0 4px rgba(0, 255, 102, 0.6);
 }
-/* --- UPDATED BLOCKS --- */
 
-/* 1. Structural wrapper must allow flex alignment and hide off-canvas slides */
 .admin-wrapper {
     display: flex;
-    align-items: stretch; /* MAGIC: Forces sidebar and main content to scale to the exact same height! */
-    min-height: calc(100vh - 100px); /* Fills the rest of the screen below the 100px header */
+    align-items: stretch;
+    min-height: calc(100vh - 100px);
     background-color: #11141a; 
-    overflow: hidden; /* Prevents unwanted horizontal scrollbars when pushing */
+    overflow: hidden;
 }
 
-/* 2. Update Sidebar defaults: must be position relative to slide organically */
 .sidebar-panel {
-    position: relative; /* Removed absolute/sticky layouts to allow true physical pushing */
+    position: relative;
     background-color: #020c1b;
     display: flex;
     flex-direction: column;
-    flex-shrink: 0; /* Ensures the sidebar doesn't compress or squeeze */
+    flex-shrink: 0;
     transition: margin-left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     z-index: 10;
-    
-    /* FIX: Removed locked height/overflow rules so it stretches dynamically with the page */
     min-height: 100%; 
 }
 
-/* 3px Glowing Rainbow Seam Boundary attached to the right boundary of sidebar */
 .sidebar-panel::after {
     content: '';
     position: absolute;
     right: 0;
     width: 3px;
-    
-    /* FIX: Anchored to the top and bottom limits of the sidebar container. 
-       This forces the line to scale perfectly alongside the sidebar at any height. */
     top: 0;
     bottom: 0;
-    
     background: linear-gradient(180deg, #ff0055, #7f00ff, #00bfff, #ff00aa, #ffcc00, #ff0055);
     background-size: 100% 400%;
     animation: rainbow-shift 8s linear infinite;
@@ -314,11 +289,10 @@ body {
     pointer-events: none;
 }
 
-/* 3. Main content transitions alongside sidebar margins */
 .main-content {
     flex: 1;
     width: 100%;
-    flex-shrink: 0; /* Retains actual design scale when pushing off-screen */
+    flex-shrink: 0;
     transition: margin-left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -345,33 +319,26 @@ body {
     transform: scale(1.15);
 }
 
-
-
-/* --- ADD THIS ENTIRE RESPONSIVE MEDIA GRID FOR BREAKPOINTS --- */
-
-/* Mobile Breakpoint (<768px): Sidebar is stretched to 50% and pushes main-content */
 @media (max-width: 767px) {
     .sidebar-panel {
         width: 50%;
         margin-left: -50%;
     }
     .sidebar-panel.open {
-        margin-left: 0; /* Slides in, pushing main content 50% out of bounds */
+        margin-left: 0;
     }
 }
 
-/* Laptop & Tablet Breakpoint (768px to 1199px): Sidebar is 30% and pushes main-content */
 @media (min-width: 768px) and (max-width: 1199px) {
     .sidebar-panel {
         width: 30%;
         margin-left: -30%;
     }
     .sidebar-panel.open {
-        margin-left: 0; /* Slides in, pushing main content 30% out of bounds */
+        margin-left: 0;
     }
 }
 
-/* Desktop & PC Breakpoint (1200px+): Sidebar is 30%, Main Content SHRINKS to 70% */
 @media (min-width: 1200px) {
     .sidebar-panel {
         width: 30%;
@@ -380,15 +347,11 @@ body {
     .sidebar-panel.open {
         margin-left: 0;
     }
-    /* When open, changes flex properties on the sibling elements to compress size cleanly */
     .sidebar-panel.open + .main-content {
         width: 70%;
         flex-shrink: 1; 
     }
 }
-
-
-/* --- SIDEBAR PANEL CONTENTS --- */
 
 .sidebar-nav-container {
     display: flex;
@@ -397,7 +360,6 @@ body {
     padding: 10px 15px 30px 15px;
 }
 
-/* Menu Search Bar Setup */
 .sidebar-search-box {
     position: relative;
     width: 100%;
@@ -433,7 +395,6 @@ body {
     color: #8892b0;
 }
 
-/* Scrollable Navigation Menu */
 .sidebar-menu {
     display: flex;
     flex-direction: column;
@@ -473,7 +434,6 @@ body {
     text-overflow: ellipsis;
 }
 
-/* Indicators and Badges */
 .menu-arrow {
     font-size: 0.75rem;
     font-weight: bold;
@@ -498,8 +458,6 @@ body {
     line-height: 1;
 }
 
-
-
 .dashboard-container {
     padding: 30px;
     width: 100%;
@@ -515,7 +473,6 @@ body {
     color: #ffffff;
 }
 
-/* --- ROUTER VIEW CONTAINER BLOCK --- */
 .router-section {
     background-color: #0c1a30;
     border: 1px solid #1e293b;
@@ -559,7 +516,6 @@ body {
     font-size: 0.85rem;
 }
 
-/* Responsive Grid columns layout: 2 columns on small views, 3 on wider views */
 .router-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -611,7 +567,7 @@ body {
 .stat-cross {
     color: #ef4444;
 }
-/* --- METRICS / STATS CARDS SECTION --- */
+
 .stats-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -699,7 +655,6 @@ body {
     height: 48px;
 }
 
-/* --- REFRESH ACTIONS CONTAINER --- */
 .refresh-container {
     display: flex;
     justify-content: flex-end;
@@ -735,32 +690,25 @@ body {
     width: 16px;
     height: 16px;
 }
-/* Glowing Rainbow Enclosure Wrapper */
+
 .rainbow-enclosure {
     position: relative;
     border-radius: 12px;
-    background: #11141a; /* Match your main content background panel color */
+    background: #11141a;
     padding: 24px;
     margin-bottom: 32px;
     box-sizing: border-box;
-    
-    /* 2px transparent border to make space for the gradient background clip */
     border: 2px solid transparent;
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
-    
-    /* Inner dark background layered on top of outer glowing rainbow gradient border */
     background-image: 
         linear-gradient(#11141a, #11141a), 
         linear-gradient(135deg, #ff007f, #7f00ff, #00f0ff, #00ff7f, #ff007f);
-    
-    /* Subtle neon shadow matching the color spectrum */
     box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.4),
         0 0 15px rgba(127, 0, 255, 0.15);
 }
 
-/* Optional: Subtle inner gradient animation for active styling */
 .rainbow-enclosure::before {
     content: '';
     position: absolute;
@@ -774,21 +722,15 @@ body {
     opacity: 0.25;
     filter: blur(8px);
 }
-/* ==========================================================================
-   DASHBOARD UPGRADE: LIVE GLOWING RAINBOW ENCLOSURES & GRAPHICS SYSTEM
-   ========================================================================== */
 
-/* 1. True Live Animated Conic-Gradient Rainbow Enclosure */
 .live-rainbow-enclosure {
     position: relative;
     border-radius: 12px;
-    background: #0f1219; /* Seamless panel match */
+    background: #0f1219;
     padding: 24px;
     margin-top: 32px;
     margin-bottom: 32px;
     box-sizing: border-box;
-    
-    /* Dual layer rendering to generate real boundary borders */
     border: 2px solid transparent;
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
@@ -796,11 +738,7 @@ body {
         linear-gradient(#0f1219, #0f1219), 
         linear-gradient(135deg, #ff0055, #7f00ff, #00bfff, #ff00aa, #ffcc00, #ff0055);
     background-size: 100% 100%, 300% 300%;
-    
-    /* Smooth Live Movement of Border Colors */
     animation: live-rainbow-shift 8s ease infinite;
-    
-    /* Neon back-glow */
     box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.4),
         0 0 15px rgba(127, 0, 255, 0.2);
@@ -812,10 +750,10 @@ body {
     100% { background-position: 0% 50%, 0% 50%; }
 }
 
-/* 2. M-Pesa STK Layout & Dimming Glow Pulse */
 .mpesa-status-bar {
-    padding: 18px 24px !important; /* Overwrite enclosure standard */
+    padding: 18px 24px !important;
 }
+
 .mpesa-status-content {
     display: flex;
     align-items: center;
@@ -823,12 +761,12 @@ body {
     font-size: 1rem;
     font-weight: 500;
 }
+
 .highlight-green {
     color: #00ff7f;
     font-weight: 600;
 }
 
-/* Pulsing Flowing Live Dot (Dimming Effect) */
 .stk-live-dot {
     width: 11px;
     height: 11px;
@@ -853,7 +791,6 @@ body {
     }
 }
 
-/* 3. Router Status Section Styling */
 .router-status-header {
     display: flex;
     justify-content: space-between;
@@ -862,26 +799,31 @@ body {
     padding-bottom: 18px;
     margin-bottom: 20px;
 }
+
 .router-status-header .header-title {
     display: flex;
     align-items: center;
     gap: 12px;
     color: #ccd6f6;
 }
+
 .router-status-header .header-icon {
     width: 22px;
     height: 22px;
     color: #8892b0;
 }
+
 .router-status-header h2 {
     font-size: 1.25rem;
     font-weight: 600;
     margin: 0;
 }
+
 .header-badges {
     display: flex;
     gap: 12px;
 }
+
 .header-badges .badge {
     display: inline-flex;
     align-items: center;
@@ -892,56 +834,55 @@ body {
     font-weight: 600;
     color: #ffffff;
 }
+
 .badge-green { background-color: #00aa66; }
 .badge-red { background-color: #cc2a36; }
 
-/* 4. Responsive Router Column Grid: 2 columns on small/medium, 3 columns on big devices */
 .router-status-grid {
     display: grid;
     gap: 16px;
 }
 
-/* Medium Devices (Base / Small Device Target) -> Exactly 2 Columns */
 @media (max-width: 1279px) {
     .router-status-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Larger Screen Target -> Exactly 3 Columns */
 @media (min-width: 1280px) {
     .router-status-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Fallback for ultra-narrow phones */
 @media (max-width: 580px) {
     .router-status-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* 5. Router Status Card Styling (Complete and Repaired) */
 .router-status-card {
     background: #090c13;
     border-radius: 8px;
     display: flex;
     align-items: center;
     padding: 16px;
-    border-left: 4px solid #cc2a36; /* Left reddish accent strip */
+    border-left: 4px solid #cc2a36;
     border-top: 1px solid #1a2233;
     border-right: 1px solid #1a2233;
     border-bottom: 1px solid #1a2233;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .router-status-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
+
 .card-left {
     margin-right: 14px;
 }
+
 .status-circle-offline {
     width: 24px;
     height: 24px;
@@ -954,17 +895,20 @@ body {
     font-size: 0.8rem;
     font-weight: bold;
 }
+
 .card-center {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
+
 .router-title {
     color: #ccd6f6;
     font-weight: 600;
     font-size: 0.95rem;
 }
+
 .router-sub-status {
     color: #8892b0;
     font-size: 0.75rem;
@@ -972,9 +916,11 @@ body {
     align-items: center;
     gap: 4px;
 }
+
 .dot-separator {
     color: #1a2233;
 }
+
 .card-refresh-btn {
     background: transparent;
     border: 1px solid #1a2233;
@@ -990,14 +936,17 @@ body {
     margin-top: 4px;
     transition: all 0.2s ease;
 }
+
 .card-refresh-btn:hover {
     border-color: #00ff7f;
     color: #00ff7f;
 }
+
 .card-refresh-btn svg {
     width: 10px;
     height: 10px;
 }
+
 .card-right {
     color: #8892b0;
     font-size: 0.8rem;
@@ -1008,74 +957,89 @@ body {
     white-space: nowrap;
 }
 
-/* ==========================================================================
-   CHART GRID LINES & SCALE ALIGNMENT SYSTEM
-   ========================================================================== */
-
-/* Layout core container */
 .vector-chart-container {
     display: flex;
     align-items: flex-end;
+    height: 200px;
+    overflow: auto;
+    background: #06090e;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #141a29;
     position: relative;
-    margin-top: 24px;
-    padding-bottom: 28px; /* Safe-space for month label baseline overflow */
 }
 
-/* Base Ticks Container spacing rule */
+.vector-chart-container::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.vector-chart-container::-webkit-scrollbar-track {
+    background: #06090e;
+}
+
+.vector-chart-container::-webkit-scrollbar-thumb {
+    background: #1b2336;
+    border-radius: 3px;
+}
+
+.vector-chart-container::-webkit-scrollbar-thumb:hover {
+    background: #00f0ff;
+}
+
 .y-axis-ticks {
     position: relative;
     width: 50px;
     margin-right: 14px;
     flex-shrink: 0;
 }
+
 .y-axis-ticks span {
     position: absolute;
     right: 0;
     font-size: 0.72rem;
     color: #5a647e;
-    transform: translateY(50%); /* Centers text precisely on the 30px tick lines */
+    transform: translateY(50%);
 }
 
-/* Spacing definitions for Graph 1 (Height: 150px) */
 .y-axis-customers {
     height: 150px;
 }
-.y-axis-customers span:nth-child(1) { bottom: 150px; } /* 50 */
-.y-axis-customers span:nth-child(2) { bottom: 120px; } /* 40 */
-.y-axis-customers span:nth-child(3) { bottom: 90px; }  /* 30 */
-.y-axis-customers span:nth-child(4) { bottom: 60px; }  /* 20 */
-.y-axis-customers span:nth-child(5) { bottom: 30px; }  /* 10 (30px off base) */
-.y-axis-customers span:nth-child(6) { bottom: 0px; }   /* 0 (base line) */
 
-/* Spacing definitions for Graph 2 (Height: 180px) */
+.y-axis-customers span:nth-child(1) { bottom: 150px; }
+.y-axis-customers span:nth-child(2) { bottom: 120px; }
+.y-axis-customers span:nth-child(3) { bottom: 90px; }
+.y-axis-customers span:nth-child(4) { bottom: 60px; }
+.y-axis-customers span:nth-child(5) { bottom: 30px; }
+.y-axis-customers span:nth-child(6) { bottom: 0px; }
+
 .y-axis-sales {
     height: 180px;
 }
-.y-axis-sales span:nth-child(1) { bottom: 180px; } /* 30,000 */
-.y-axis-sales span:nth-child(2) { bottom: 150px; } /* 25,000 */
-.y-axis-sales span:nth-child(3) { bottom: 120px; } /* 20,000 */
-.y-axis-sales span:nth-child(4) { bottom: 90px; }  /* 15,000 */
-.y-axis-sales span:nth-child(5) { bottom: 60px; }  /* 10,000 */
-.y-axis-sales span:nth-child(6) { bottom: 30px; }  /* 5,000 (30px off base) */
-.y-axis-sales span:nth-child(7) { bottom: 0px; }   /* 0 (base line) */
 
-/* Core chart graphics frame wrappers */
+.y-axis-sales span:nth-child(1) { bottom: 180px; }
+.y-axis-sales span:nth-child(2) { bottom: 150px; }
+.y-axis-sales span:nth-child(3) { bottom: 120px; }
+.y-axis-sales span:nth-child(4) { bottom: 90px; }
+.y-axis-sales span:nth-child(5) { bottom: 60px; }
+.y-axis-sales span:nth-child(6) { bottom: 30px; }
+.y-axis-sales span:nth-child(7) { bottom: 0px; }
+
 .chart-graph-wrapper {
+    flex: 1;
     position: relative;
-    width: 100%;
-    background-color: #06090e;
-    border-left: 1px solid #1a2233;
-    border-bottom: 1px solid #1a2233;
-    border-radius: 4px;
-}
-.chart-1-grid {
-    height: 150px; /* 5 intervals * 30px */
-}
-.chart-2-grid {
-    height: 180px; /* 6 intervals * 30px */
+    height: 100%;
+    min-width: max-content;
 }
 
-/* Crisp grid system backdrop */
+.chart-1-grid {
+    height: 150px;
+}
+
+.chart-2-grid {
+    height: 180px;
+}
+
 .grid-lines-container {
     position: absolute;
     top: 0;
@@ -1085,6 +1049,7 @@ body {
     pointer-events: none;
     z-index: 1;
 }
+
 .grid-h-line {
     position: absolute;
     left: 0;
@@ -1092,6 +1057,7 @@ body {
     height: 1px;
     background-color: rgba(29, 35, 48, 0.4);
 }
+
 .grid-v-line {
     position: absolute;
     top: 0;
@@ -1100,264 +1066,26 @@ body {
     background-color: rgba(29, 35, 48, 0.4);
 }
 
-/* Monthly layout bars on top of grid lines */
-.bars-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    z-index: 2;
-}
-.bar-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    height: 100%;
-    width: 8.333%;
-    position: relative;
-}
-.bar-fill {
-    width: 50%;
-    background: linear-gradient(180deg, #00ff7f 0%, #00aa66 100%);
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    transition: height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 0 10px rgba(0, 255, 127, 0.15);
-}
-.blue-purple-bars .bar-fill {
-    background: linear-gradient(180deg, #00bfff 0%, #7f00ff 100%);
-    box-shadow: 0 0 10px rgba(0, 191, 255, 0.15);
-}
-
-/* X-Axis month label rules positioning outside active boundaries */
-.x-label {
-    position: absolute;
-    bottom: -22px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.72rem;
-    color: #8892b0;
-    text-align: center;
-    white-space: nowrap;
-}
-
-/* Generic layout helpers */
-.chart-panel-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #1d2330;
-    padding-bottom: 18px;
-    margin-bottom: 20px;
-}
-.chart-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #ccd6f6;
-}
-.chart-title h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 0;
-}
-.chart-actions .action-btn {
-    background: transparent;
-    border: none;
-    color: #5a647e;
-    cursor: pointer;
-    font-size: 1.2rem;
-    padding: 0 6px;
-    transition: color 0.2s;
-}
-.chart-actions .action-btn:hover {
-    color: #ffffff;
-}
-.chart-legend {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #8892b0;
-    font-size: 0.8rem;
-    margin-bottom: 16px;
-}
-.legend-color-box {
-    width: 12px;
-    height: 12px;
-    border-radius: 2px;
-}
-.members-box { background: #00aa66; }
-.sales-box { background: #7f00ff; }
-/* ==========================================================================
-   6. Vector Charts Framework & Realism Layout (MATCHED TO NEW LAYOUT)
-   ========================================================================== */
-.chart-panel-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #1d2330;
-    padding-bottom: 16px;
-    margin-bottom: 16px;
-    gap: 10px;
-}
-.chart-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #ccd6f6;
-}
-.chart-title .header-icon {
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-    color: #a0aec0;
-}
-.chart-title h2 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin: 0;
-    line-height: 1.3;
-    color: #ccd6f6;
-}
-.chart-actions {
-    display: flex;
-    gap: 8px;
-}
-.chart-actions .action-btn {
-    background-color: #00c3ff1a;
-    border: 1px solid #00c3ff40;
-    color: #00f0ff;
-    width: 26px;
-    height: 26px;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.chart-legend {
-    display: flex;
-    align-items: center;
-    font-size: 0.8rem;
-    color: #8892b0;
-    margin-bottom: 24px;
-}
-.legend-color-box {
-    width: 18px;
-    height: 10px;
-    border-radius: 2px;
-    margin-right: 8px;
-    display: inline-block;
-}
-.members-box { background-color: #0010d9; border: 1px solid #3366ff; }
-.sales-box { background-color: #0010d9; border: 1px solid #c400ff; }
-
-/* SVG Graph Coordinate Base - Fixed at 70px with Two-Way Scroll */
-.vector-chart-container {
-    display: flex;
-    align-items: flex-end;
-    height: 70px;             /* Strict 70px height matching your other charts */
-    overflow: auto;           /* Full up-down and left-right scrolling rules */
-    background: #06090e;
-    border-radius: 8px;
-    padding: 12px;
-    border: 1px solid #141a29;
-    position: relative;
-}
-
-/* Matching Modern Thin Scrolling Track */
-.vector-chart-container::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
-.vector-chart-container::-webkit-scrollbar-track {
-    background: #06090e;
-}
-.vector-chart-container::-webkit-scrollbar-thumb {
-    background: #1b2336;
-    border-radius: 3px;
-}
-.vector-chart-container::-webkit-scrollbar-thumb:hover {
-    background: #00f0ff;
-}
-
-/* Y-Axis Configured with strict 30px vertical gap increments */
-.y-axis {
-    display: flex;
-    flex-direction: column-reverse; /* Bottom to top output */
-    gap: 30px;                      /* Perfect vertical alignment gap */
-    width: 50px;
-    color: #5d6785;
-    font-size: 0.75rem;
-    text-align: right;
-    padding-right: 12px;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    border-right: 1px solid #1d2330;
-    margin-bottom: 22px;            /* Align offset base with X labels */
-}
-.y-axis span {
-    display: block;
-    height: 12px;
-    line-height: 12px;
-}
-
-/* Horizontal Canvas Wrapper with Wide Extension Compatibility */
-.chart-graph-wrapper {
-    flex: 1;
-    position: relative;
-    height: 100%;
-    min-width: max-content; /* Prevents compression and forces scroll when wide */
-}
-
-/* Subtle Gridlines mapped behind content */
-.grid-lines {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    pointer-events: none;
-    z-index: 1;
-}
-.grid-lines .line {
-    border-bottom: 1px dashed rgba(29, 35, 48, 0.7);
-    width: 100%;
-    height: 0;
-}
-
-/* Columns Container spacing of exactly 30px */
 .bars-container {
     position: relative;
     display: flex;
-    gap: 30px;            /* 30px horizontal gaps between columns */
+    gap: 30px;
     align-items: flex-end;
     z-index: 2;
     padding-left: 15px;
     height: 100%;
 }
 
-/* Individual Columns sized static to lock intervals */
 .bar-col {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    width: 60px;          /* Matching default label width bounds */
+    width: 60px;
     height: 100%;
     flex-shrink: 0;
 }
 
-/* Upgraded dynamic bar fill style */
 .bar-fill {
     width: 100%;
     max-width: 44px;
@@ -1370,7 +1098,6 @@ body {
     transition: height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Alternate purple design rules for sales metrics */
 .blue-purple-bars .bar-fill {
     background-color: #0010d9;
     border-top: 1.5px solid #a100ff;
@@ -1387,15 +1114,116 @@ body {
     white-space: nowrap;
 }
 
+.chart-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1d2330;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    gap: 10px;
+}
 
+.chart-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ccd6f6;
+}
 
+.chart-title .header-icon {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    color: #a0aec0;
+}
 
+.chart-title h2 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+    color: #ccd6f6;
+}
 
-/* ==========================================================================
-   DATA USAGE AND VOUCHERS ADDITIONS (70px Scroll & 30px Precise Gaps)
-   ========================================================================== */
+.chart-actions {
+    display: flex;
+    gap: 8px;
+}
 
-/* Simple Standard Panel Header Layout */
+.chart-actions .action-btn {
+    background-color: #00c3ff1a;
+    border: 1px solid #00c3ff40;
+    color: #00f0ff;
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-legend {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #8892b0;
+    margin-bottom: 24px;
+}
+
+.legend-color-box {
+    width: 18px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.members-box { background-color: #0010d9; border: 1px solid #3366ff; }
+.sales-box { background-color: #0010d9; border: 1px solid #c400ff; }
+
+.y-axis {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 30px;
+    width: 50px;
+    color: #5d6785;
+    font-size: 0.75rem;
+    text-align: right;
+    padding-right: 12px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    border-right: 1px solid #1d2330;
+    margin-bottom: 22px;
+}
+
+.y-axis span {
+    display: block;
+    height: 12px;
+    line-height: 12px;
+}
+
+.grid-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.grid-lines .line {
+    border-bottom: 1px dashed rgba(29, 35, 48, 0.7);
+    width: 100%;
+    height: 0;
+}
+
 .panel-header-simple {
     display: flex;
     justify-content: space-between;
@@ -1404,58 +1232,62 @@ body {
     padding-bottom: 14px;
     margin-bottom: 16px;
 }
+
 .panel-header-simple h2 {
     font-size: 1.1rem;
     font-weight: 600;
     color: #ccd6f6;
     margin: 0;
 }
+
 .header-title-flex {
     display: flex;
     align-items: center;
     gap: 10px;
 }
+
 .chart-growth-icon {
     width: 20px;
     height: 20px;
     color: #a0aec0;
 }
 
-/* Today's Data Stats List */
 .usage-stats-content {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
+
 .usage-metrics-list p {
     margin: 6px 0;
     color: #a0aec0;
     font-size: 0.9rem;
 }
+
 .usage-metrics-list strong {
     color: #ccd6f6;
 }
 
-/* Legend Styling matching colors of lines/bars in photo */
 .mini-chart-legend {
     font-size: 0.8rem;
     color: #8892b0;
     display: flex;
     align-items: center;
 }
+
 .legend-pill {
     width: 14px;
     height: 8px;
     border-radius: 2px;
     display: inline-block;
 }
+
 .upload-pill { background-color: #0088cc; }
 .download-pill { background-color: #00cc88; }
 
-/* 70px Height Restrictor Box with Two-Way Scrolling Enabled */
 .scrollable-chart-area {
-    height: 70px;
-    overflow: auto; /* Handles both vertical (up/down) and horizontal (left/right) overflows */
+    height: 200px;
+    overflow: auto;
     background: #06090e;
     border-radius: 8px;
     padding: 12px;
@@ -1463,34 +1295,34 @@ body {
     border: 1px solid #141a29;
 }
 
-/* High-tech Thin Scrolling Track Style */
 .scrollable-chart-area::-webkit-scrollbar {
     width: 6px;
     height: 6px;
 }
+
 .scrollable-chart-area::-webkit-scrollbar-track {
     background: #06090e;
 }
+
 .scrollable-chart-area::-webkit-scrollbar-thumb {
     background: #1b2336;
     border-radius: 3px;
 }
+
 .scrollable-chart-area::-webkit-scrollbar-thumb:hover {
     background: #00f0ff;
 }
 
-/* Inner Layout Flex to ensure scroll triggers correctly */
 .chart-scroll-content {
     display: flex;
     align-items: flex-end;
-    min-width: max-content; /* Critical: Allows layout to stretch wide and trigger horizontal scroll */
+    min-width: max-content;
 }
 
-/* Y-Axis: Fixed vertical gaping spacing of exactly 30px */
 .chart-y-axis {
     display: flex;
-    flex-direction: column-reverse; /* Render bottom to top */
-    gap: 30px; /* Exact 30px vertical gaps between the axis metrics */
+    flex-direction: column-reverse;
+    gap: 30px;
     padding-right: 15px;
     border-right: 1px solid #1d2330;
     color: #5d6785;
@@ -1498,49 +1330,48 @@ body {
     font-family: monospace;
     flex-shrink: 0;
     text-align: right;
-    margin-bottom: 22px; /* Bottom offset align offset with X labels */
+    margin-bottom: 22px;
 }
+
 .chart-y-axis span {
     display: block;
     height: 12px;
     line-height: 12px;
 }
 
-/* Canvas Container spacing */
 .chart-canvas-container {
     flex: 1;
     padding-left: 15px;
 }
 
-/* X-Axis Horizontal row layout with exact 30px column spacing */
 .chart-bars-scroll-row {
     display: flex;
-    gap: 30px; /* Exact 30px horizontal gaps between daily/monthly coordinates */
+    gap: 30px;
     align-items: flex-end;
 }
 
-/* Individual Bar Columns */
 .chart-bar-col {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    width: 60px; /* Prevents compression of standard label texts */
+    width: 60px;
     flex-shrink: 0;
 }
 
-/* Bar graphics layout */
 .dual-bars {
     display: flex;
     align-items: flex-end;
     gap: 4px;
 }
+
 .bar-upload {
     width: 7px;
     background-color: #0088cc;
     border-radius: 1px 1px 0 0;
     box-shadow: 0 0 6px rgba(0, 136, 204, 0.4);
 }
+
 .bar-download {
     width: 7px;
     background-color: #00cc88;
@@ -1548,7 +1379,6 @@ body {
     box-shadow: 0 0 6px rgba(0, 204, 136, 0.4);
 }
 
-/* Horizontal Axis Labels */
 .x-axis-label {
     font-size: 11px;
     color: #5d6785;
@@ -1557,15 +1387,42 @@ body {
     white-space: nowrap;
 }
 
-/* Voucher Stock Table Modern Dark Layout */
+.scrollable-table-wrapper {
+    width: 100%;
+    max-height: 200px;
+    overflow: auto;
+    border-radius: 6px;
+    background-color: #06090e;
+    border: 1px solid #141a29;
+}
+
+.scrollable-table-wrapper::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.scrollable-table-wrapper::-webkit-scrollbar-track {
+    background: #06090e;
+}
+
+.scrollable-table-wrapper::-webkit-scrollbar-thumb {
+    background: #1b2336;
+    border-radius: 3px;
+}
+
+.scrollable-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #00f0ff;
+}
+
 .vouchers-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 8px;
+    margin-top: 0;
     background-color: #06090e;
     border-radius: 6px;
     overflow: hidden;
 }
+
 .vouchers-table th {
     background-color: #111622;
     color: #8892b0;
@@ -1574,31 +1431,38 @@ body {
     text-align: left;
     padding: 12px 16px;
     border-bottom: 1px solid #1a2233;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
+
 .vouchers-table td {
     color: #ccd6f6;
     font-size: 0.85rem;
     padding: 12px 16px;
     border-bottom: 1px solid #141a29;
 }
+
 .vouchers-table tr:last-child td {
     border-bottom: none;
 }
+
 .vouchers-table tr.total-row {
     background-color: #111622;
     font-weight: 700;
 }
+
 .highlight-cyan {
     color: #00f0ff !important;
     font-weight: bold;
 }
 
-/* Growth Graph Line Markers */
 .growth-dot-wrapper {
     position: relative;
     width: 100%;
-    height: 250px; /* Generates space inside scroll layout */
+    height: 250px;
 }
+
 .dot-node {
     width: 8px;
     height: 8px;
@@ -1611,46 +1475,16 @@ body {
     box-shadow: 0 0 8px #00f0ff;
 }
 
-/* ==========================================================================
-   TABLE EQUAL LENGTH & SCROLLING / PIE CHART 80X80 CONSTRAINTS
-   ========================================================================== */
-
-/* 1. Horizontal Scroll Trigger for Tables on Narrow Screens */
-.scrollable-table-wrapper {
-    width: 100%;
-    overflow-x: auto; /* Activates auto-scroll whenever text overflows */
-    border-radius: 6px;
-    background-color: #06090e;
-    border: 1px solid #141a29;
-}
-
-/* Matching Modern Custom Scrollbars for the Tables */
-.scrollable-table-wrapper::-webkit-scrollbar {
-    height: 6px;
-}
-.scrollable-table-wrapper::-webkit-scrollbar-track {
-    background: #06090e;
-}
-.scrollable-table-wrapper::-webkit-scrollbar-thumb {
-    background: #1b2336;
-    border-radius: 3px;
-}
-.scrollable-table-wrapper::-webkit-scrollbar-thumb:hover {
-    background: #00f0ff;
-}
-
-/* 2. Equal Column Layout Engine */
 .equal-cols-table {
     width: 100%;
-    table-layout: fixed; /* Forces the browser to strictly respect designated widths */
+    table-layout: fixed;
     border-collapse: collapse;
-    min-width: 600px;    /* Prevents severe columns squeezing on mobile */
+    min-width: 600px;
 }
 
-/* Column Rules for 3-Column Tables */
 .equal-cols-table.three-cols th,
 .equal-cols-table.three-cols td {
-    width: 33.333%;      /* Keeps all 3 columns at identical widths */
+    width: 33.333%;
     padding: 12px 16px;
     text-align: left;
     color: #ccd6f6;
@@ -1658,13 +1492,12 @@ body {
     border-bottom: 1px solid #141a29;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    word-break: break-all; /* Stops long hashes/MACs from destroying cell layouts */
+    word-break: break-all;
 }
 
-/* Column Rules for 4-Column Tables */
 .equal-cols-table.four-cols th,
 .equal-cols-table.four-cols td {
-    width: 25%;          /* Keeps all 4 columns at identical widths */
+    width: 25%;
     padding: 12px 16px;
     text-align: left;
     color: #ccd6f6;
@@ -1680,29 +1513,32 @@ body {
     color: #8892b0 !important;
     font-weight: 600;
     font-size: 0.8rem !important;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .equal-cols-table tr:last-child td {
     border-bottom: none;
 }
 
-/* Links inside tables */
 .user-link {
     color: #00f0ff;
     text-decoration: none;
     cursor: pointer;
 }
+
 .user-link:hover {
     text-decoration: underline;
 }
 
-/* 3. Pagination Layout styling */
 .table-pagination {
     display: flex;
     justify-content: flex-start;
     gap: 6px;
     margin-top: 16px;
 }
+
 .pag-btn {
     padding: 6px 12px;
     background-color: #111622;
@@ -1713,17 +1549,18 @@ body {
     cursor: pointer;
     user-select: none;
 }
+
 .pag-btn.active {
     background-color: #0088cc;
     border-color: #0088cc;
     color: #ffffff;
     font-weight: 600;
 }
+
 .pag-btn:hover:not(.active) {
     background-color: #1a2233;
 }
 
-/* 4. Perfect 80px x 80px Conic Pie Chart and Legend Alignments */
 .pie-chart-section-wrapper {
     display: flex;
     flex-direction: column;
@@ -1732,10 +1569,9 @@ body {
 }
 
 .insights-pie-chart {
-    width: 80px !important;  /* Strictly enforced height & width */
+    width: 80px !important;
     height: 80px !important;
     border-radius: 50%;
-    /* CSS conic-gradient mapping exact segments: Active (Teal), Expired (Brownish-red), Inactive (Dark Gray) */
     background: conic-gradient(
         #2e6b5c 0% 18%, 
         #854a43 18% 24%, 
@@ -1770,3 +1606,4 @@ body {
 .legend-color.active-color { background-color: #2e6b5c; }
 .legend-color.expired-color { background-color: #854a43; }
 .legend-color.inactive-color { background-color: #2a334a; }
+
