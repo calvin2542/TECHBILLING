@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Header Frame Section (Fixed 100px Height Matrix) -->
     <header class="admin-header">
         <div class="header-left">
             <div class="logo-circle">
@@ -48,17 +47,14 @@
         </div>
     </header>
 
-    <!-- Structural Body Wrapper -->
     <div class="admin-wrapper">
-        <!-- Slide-out Sidebar Panel (30% Width) -->
+        
         <aside class="sidebar-panel" id="sidebarPanel">
             <div class="sidebar-header">
                 <button class="close-panel-btn" id="closePanelBtn">&lt;</button>
             </div>
             
-            <!-- Sidebar Navigation Menu -->
             <div class="sidebar-nav-container">
-                <!-- Menu Search Bar -->
                 <div class="sidebar-search-box">
                     <svg class="sidebar-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
@@ -67,7 +63,6 @@
                     <input type="text" placeholder="Search menu..." class="sidebar-search-input">
                 </div>
 
-                <!-- Navigation List -->
                 <nav class="sidebar-menu">
                     <a href="#" class="menu-item">
                         <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -86,7 +81,7 @@
                         <span class="menu-text">Favorites</span>
                         <span class="menu-arrow">&lt;</span>
                     </a>
-                    <!-- Admins (New Section) -->
+                    
                     <a href="#" class="menu-item">
                         <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -97,7 +92,6 @@
                         <span class="menu-arrow">&lt;</span>
                     </a>
 
-                    <!-- Customers -->
                     <a href="#" class="menu-item">
                         <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -109,7 +103,6 @@
                         <span class="menu-arrow">&lt;</span>
                     </a>
 
-                    <!-- Activation -->
                     <a href="#" class="menu-item">
                         <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
@@ -395,509 +388,467 @@
                 </nav>
             </div>
         </aside>
-<!-- Main Content Area -->
-<main class="main-content" id="mainContent">
-    <div class="dashboard-container">
-        <h1 class="dashboard-title">Dashboard</h1>
 
-        <!-- SECTION 1 ENCLOSURE: Router View -->
-        <div class="rainbow-enclosure">
-            <div class="router-section">
-                <div class="router-header">
-                    <div class="router-header-left">
-                        <svg class="router-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="2" width="20" height="6" rx="1"></rect>
-                            <rect x="2" y="9" width="20" height="6" rx="1"></rect>
-                            <rect x="2" y="16" width="20" height="6" rx="1"></rect>
-                            <circle cx="6" cy="5" r="1" fill="currentColor"></circle>
-                            <circle cx="6" cy="12" r="1" fill="currentColor"></circle>
-                            <circle cx="6" cy="19" r="1" fill="currentColor"></circle>
+        <main class="main-content" id="mainContent">
+            <div class="dashboard-container">
+                <h1 class="dashboard-title">Dashboard</h1>
+
+                <div class="rainbow-enclosure">
+                    <div class="router-section">
+                        <div class="router-header">
+                            <div class="router-header-left">
+                                <svg class="router-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="6" rx="1"></rect>
+                                    <rect x="2" y="9" width="20" height="6" rx="1"></rect>
+                                    <rect x="2" y="16" width="20" height="6" rx="1"></rect>
+                                    <circle cx="6" cy="5" r="1" fill="currentColor"></circle>
+                                    <circle cx="6" cy="12" r="1" fill="currentColor"></circle>
+                                    <circle cx="6" cy="19" r="1" fill="currentColor"></circle>
+                                </svg>
+                                <span>Router View</span>
+                            </div>
+                            <div class="router-header-right">
+                                <select class="router-select" id="router-selector">
+                                    <option value="all">All Routers - System Wide</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="router-grid" id="router-grid-container"></div>
+                    </div>
+                </div>
+
+                <div class="rainbow-enclosure">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value" id="stat-income-today">0</div>
+                                <div class="stat-title">INCOME TODAY <span class="eye-icon">👁</span></div>
+                                <a href="#" class="stat-link">View Reports <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6z"></path>
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value" id="stat-income-month">0</div>
+                                <div class="stat-title">INCOME THIS MONTH <span class="eye-icon">👁</span></div>
+                                <a href="#" class="stat-link">View Reports <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value" id="stat-active-expired">0/0</div>
+                                <div class="stat-title">ACTIVE/EXPIRED</div>
+                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value" id="stat-total-users">0</div>
+                                <div class="stat-title">TOTAL USERS</div>
+                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value" id="stat-hotspot-online">0</div>
+                                <div class="stat-title">HOTSPOT ONLINE USERS</div>
+                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                                    <line x1="12" y1="20" x2="12.01" y2="20" stroke-width="2"></line>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value" id="stat-pppoe-online">0</div>
+                                <div class="stat-title">PPPOE ONLINE USERS</div>
+                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="18" cy="5" r="3"></circle>
+                                    <circle cx="6" cy="12" r="3"></circle>
+                                    <circle cx="18" cy="19" r="3"></circle>
+                                    <path d="M6 15l12 4"></path>
+                                    <path d="M6 9l12-4"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value" id="stat-static-online">0</div>
+                                <div class="stat-title">STATIC ONLINE USERS</div>
+                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="12" r="6"></circle>
+                                    <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value" id="stat-total-online">0</div>
+                                <div class="stat-title">TOTAL ONLINE USERS</div>
+                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-rainbow-enclosure mpesa-status-bar">
+                    <div class="mpesa-status-content">
+                        <span class="stk-live-dot"></span>
+                        <span class="mpesa-text" id="mpesa-status-text">M-Pesa STK Push Service — <span class="highlight-green">Loading...</span></span>
+                    </div>
+                </div>
+
+                <div class="live-rainbow-enclosure">
+                    <div class="router-status-container">
+                        <div class="router-status-header">
+                            <div class="header-title">
+                                <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+                                    <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+                                    <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+                                    <rect x="3" y="16" width="7" height="5" rx="1"></rect>
+                                </svg>
+                                <h2>Router Status</h2>
+                            </div>
+                            <div class="header-badges">
+                                <span class="badge badge-green" id="badge-online">
+                                    <span class="badge-icon">✓</span> 0 Online
+                                </span>
+                                <span class="badge badge-red" id="badge-offline">
+                                    <span class="badge-icon">×</span> 0 Offline
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="router-status-grid" id="router-status-grid"></div>
+                    </div>
+                </div>
+
+                <div class="live-rainbow-enclosure">
+                    <div class="chart-panel">
+                        <div class="chart-panel-header">
+                            <div class="chart-title">
+                                <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+                                    <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+                                    <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+                                    <rect x="3" y="16" width="7" height="5" rx="1"></rect>
+                                </svg>
+                                <h2>Monthly Registered Customers</h2>
+                            </div>
+                            <div class="chart-actions">
+                                <button class="action-btn minimize-btn">−</button>
+                                <button class="action-btn close-btn">×</button>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <div class="chart-legend">
+                                <span class="legend-color-box members-box"></span> Registered Members
+                            </div>
+                            <div class="vector-chart-container">
+                                <div class="y-axis-ticks y-axis-customers">
+                                    <span>50</span><span>40</span><span>30</span><span>20</span><span>10</span><span>0</span>
+                                </div>
+                                <div class="chart-graph-wrapper chart-1-grid">
+                                    <div class="grid-lines-container">
+                                        <div class="grid-h-line" style="bottom: 30px;"></div>
+                                        <div class="grid-h-line" style="bottom: 60px;"></div>
+                                        <div class="grid-h-line" style="bottom: 90px;"></div>
+                                        <div class="grid-h-line" style="bottom: 120px;"></div>
+                                        <div class="grid-h-line" style="bottom: 150px;"></div>
+                                    </div>
+                                    <div class="bars-container" id="chart-customers-bars"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-rainbow-enclosure">
+                    <div class="chart-panel">
+                        <div class="chart-panel-header">
+                            <div class="chart-title">
+                                <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                                <h2>Total Monthly Sales</h2>
+                            </div>
+                            <div class="chart-actions">
+                                <button class="action-btn minimize-btn">−</button>
+                                <button class="action-btn close-btn">×</button>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <div class="chart-legend">
+                                <span class="legend-color-box sales-box"></span> Monthly Sales
+                            </div>
+                            <div class="vector-chart-container">
+                                <div class="y-axis-ticks y-axis-sales">
+                                    <span>30,000</span><span>25,000</span><span>20,000</span><span>15,000</span><span>10,000</span><span>5,000</span><span>0</span>
+                                </div>
+                                <div class="chart-graph-wrapper chart-2-grid">
+                                    <div class="grid-lines-container">
+                                        <div class="grid-h-line" style="bottom: 30px;"></div>
+                                        <div class="grid-h-line" style="bottom: 60px;"></div>
+                                        <div class="grid-h-line" style="bottom: 90px;"></div>
+                                        <div class="grid-h-line" style="bottom: 120px;"></div>
+                                        <div class="grid-h-line" style="bottom: 150px;"></div>
+                                        <div class="grid-h-line" style="bottom: 180px;"></div>
+                                    </div>
+                                    <div class="bars-container blue-purple-bars" id="chart-sales-bars"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Today's Data Usage</h2>
+                    </div>
+                    <div class="usage-stats-content">
+                        <div class="mini-chart-legend">
+                            <span class="legend-pill upload-pill"></span> Upload
+                            <span class="legend-pill download-pill" style="margin-left: 15px;"></span> Download
+                        </div>
+                        <div class="usage-metrics-list">
+                            <p><strong>Upload:</strong> <span id="today-upload">0 B</span></p>
+                            <p><strong>Download:</strong> <span id="today-download">0 B</span></p>
+                            <p><strong>Total:</strong> <span id="today-total">0 B</span></p>
+                            <p><strong>Date:</strong> <span id="today-date">--</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Weekly Data Usage</h2>
+                        <div class="mini-chart-legend">
+                            <span class="legend-pill upload-pill"></span> Upload
+                            <span class="legend-pill download-pill" style="margin-left: 15px;"></span> Download
+                        </div>
+                    </div>
+                    <div class="scrollable-chart-area">
+                        <div class="chart-scroll-content">
+                            <div class="chart-y-axis" id="weekly-y-axis"></div>
+                            <div class="chart-canvas-container">
+                                <div class="chart-bars-scroll-row" id="weekly-usage-container">
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Monthly Data Usage</h2>
+                        <div class="mini-chart-legend">
+                            <span class="legend-pill upload-pill"></span> Upload
+                            <span class="legend-pill download-pill" style="margin-left: 15px;"></span> Download
+                        </div>
+                    </div>
+                    <div class="scrollable-chart-area">
+                        <div class="chart-scroll-content">
+                            <div class="chart-y-axis" id="monthly-y-axis"></div>
+                            <div class="chart-canvas-container">
+                                <div class="chart-bars-scroll-row" id="monthly-usage-container">
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Vouchers Stock</h2>
+                    </div>
+                    <table class="vouchers-table">
+                        <thead>
+                            <tr><th>PLAN NAME</th><th>UNUSED</th><th>USED</th></tr>
+                        </thead>
+                        <tbody id="vouchers-stock-body">
+                            </tbody>
+                    </table>
+                </div>
+
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <div class="header-title-flex">
+                            <svg class="chart-growth-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3v18h18M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path>
+                            </svg>
+                            <h2>Customers Growth</h2>
+                        </div>
+                    </div>
+                    <div class="scrollable-chart-area">
+                        <div class="chart-scroll-content">
+                            <div class="chart-y-axis" id="growth-y-axis"></div>
+                            <div class="chart-canvas-container">
+                                <div class="chart-bars-scroll-row" id="growth-chart-container">
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Users Expiring Today</h2>
+                    </div>
+                    <div class="scrollable-table-wrapper">
+                        <table class="equal-cols-table three-cols">
+                            <thead>
+                                <tr><th>USERNAME</th><th>CREATED ON</th><th>EXPIRES ON</th></tr>
+                            </thead>
+                            <tbody id="expiring-users-body">
+                                </tbody>
+                        </table>
+                    </div>
+                    <div class="table-pagination" id="expiring-users-pagination"></div>
+                </div>
+
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Payment Gateway: OwnMpesaDetails</h2>
+                    </div>
+                    <div class="mpesa-gateway-content">
+                        <div class="mpesa-status-content">
+                            <span class="stk-live-dot"></span> 
+                            <span>MPesa STK Engine: <span class="highlight-green" id="mpesa-gateway-status">CHECKING...</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple" style="justify-content: center;">
+                        <h2>All Users Insights</h2>
+                    </div>
+                    <div class="pie-chart-section-wrapper">
+                        <div class="insights-pie-chart" id="users-pie-chart"></div>
+                        <div class="pie-chart-legend">
+                            <span class="legend-item"><span class="legend-color active-color"></span> Active</span>
+                            <span class="legend-item"><span class="legend-color expired-color"></span> Expired</span>
+                            <span class="legend-item"><span class="legend-color inactive-color"></span> Inactive</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Best Selling Packages Per Month</h2>
+                    </div>
+                    <div class="scrollable-table-wrapper">
+                        <table class="equal-cols-table four-cols">
+                            <thead>
+                                <tr><th>PACKAGE</th><th>PRICE</th><th>SALES</th><th>REVENUE</th></tr>
+                            </thead>
+                            <tbody id="best-selling-body">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Transactions per Router</h2>
+                    </div>
+                    <div class="scrollable-table-wrapper">
+                        <table class="equal-cols-table four-cols">
+                            <thead>
+                                <tr><th>ROUTER</th><th>TRANSACTIONS</th><th>PERCENTAGE</th><th>AMOUNT</th></tr>
+                            </thead>
+                            <tbody id="router-trans-body">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Last 5 Transactions</h2>
+                    </div>
+                    <div class="scrollable-table-wrapper">
+                        <table class="equal-cols-table three-cols">
+                            <thead>
+                                <tr><th>USERNAME</th><th>AMOUNT</th><th>DATE</th></tr>
+                            </thead>
+                            <tbody id="last-trans-body">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="refresh-container">
+                    <button class="refresh-btn" id="refresh-users-btn">
+                        <svg class="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path>
                         </svg>
-                        <span>Router View</span>
-                    </div>
-                    <div class="router-header-right">
-                        <select class="router-select" id="router-selector">
-                            <option value="all">All Routers - System Wide</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <!-- Dynamic Router Cards injected here -->
-                <div class="router-grid" id="router-grid-container"></div>
-            </div>
-        </div>
-
-        <!-- SECTION 2 ENCLOSURE: Stats Card Grid -->
-        <div class="rainbow-enclosure">
-            <div class="stats-grid">
-                <!-- Card 1: Income Today -->
-                <div class="stat-card">
-                    <div class="stat-card-left">
-                        <div class="stat-value" id="stat-income-today">0</div>
-                        <div class="stat-title">INCOME TODAY <span class="eye-icon">👁</span></div>
-                        <a href="#" class="stat-link">View Reports <span class="arrow-icon">→</span></a>
-                    </div>
-                    <div class="stat-card-right">
-                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6z"></path>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <path d="M16 10a4 4 0 0 1-8 0"></path>
-                        </svg>
-                    </div>
+                        Refresh Online Users
+                    </button>
                 </div>
 
-                <!-- Card 2: Income Month -->
-                <div class="stat-card">
-                    <div class="stat-card-left">
-                        <div class="stat-value" id="stat-income-month">0</div>
-                        <div class="stat-title">INCOME THIS MONTH <span class="eye-icon">👁</span></div>
-                        <a href="#" class="stat-link">View Reports <span class="arrow-icon">→</span></a>
-                    </div>
-                    <div class="stat-card-right">
-                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <line x1="18" y1="20" x2="18" y2="10"></line>
-                            <line x1="12" y1="20" x2="12" y2="4"></line>
-                            <line x1="6" y1="20" x2="6" y2="14"></line>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Card 3: Active/Expired -->
-                <div class="stat-card">
-                    <div class="stat-card-left">
-                        <div class="stat-value" id="stat-active-expired">0/0</div>
-                        <div class="stat-title">ACTIVE/EXPIRED</div>
-                        <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
-                    </div>
-                    <div class="stat-card-right">
-                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Card 4: Total Users -->
-                <div class="stat-card">
-                    <div class="stat-card-left">
-                        <div class="stat-value" id="stat-total-users">0</div>
-                        <div class="stat-title">TOTAL USERS</div>
-                        <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
-                    </div>
-                    <div class="stat-card-right">
-                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Card 5: Hotspot Online -->
-                <div class="stat-card">
-                    <div class="stat-card-left">
-                        <div class="stat-value" id="stat-hotspot-online">0</div>
-                        <div class="stat-title">HOTSPOT ONLINE USERS</div>
-                        <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
-                    </div>
-                    <div class="stat-card-right">
-                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                            <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                            <line x1="12" y1="20" x2="12.01" y2="20" stroke-width="2"></line>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Card 6: PPPoE Online -->
-                <div class="stat-card">
-                    <div class="stat-card-left">
-                        <div class="stat-value" id="stat-pppoe-online">0</div>
-                        <div class="stat-title">PPPOE ONLINE USERS</div>
-                        <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
-                    </div>
-                    <div class="stat-card-right">
-                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="18" cy="5" r="3"></circle>
-                            <circle cx="6" cy="12" r="3"></circle>
-                            <circle cx="18" cy="19" r="3"></circle>
-                            <path d="M6 15l12 4"></path>
-                            <path d="M6 9l12-4"></path>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Card 7: Static Online -->
-                <div class="stat-card">
-                    <div class="stat-card-left">
-                        <div class="stat-value" id="stat-static-online">0</div>
-                        <div class="stat-title">STATIC ONLINE USERS</div>
-                        <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
-                    </div>
-                    <div class="stat-card-right">
-                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <circle cx="12" cy="12" r="6"></circle>
-                            <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Card 8: Total Online -->
-                <div class="stat-card">
-                    <div class="stat-card-left">
-                        <div class="stat-value" id="stat-total-online">0</div>
-                        <div class="stat-title">TOTAL ONLINE USERS</div>
-                        <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
-                    </div>
-                    <div class="stat-card-right">
-                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                    </div>
-                </div>
-            </div>
+            </div> </main> </div> <footer class="admin-footer">
+        <div class="footer-content">
+            <p class="copyright">&copy; 2026 COBU-TECH INDUSTRIES NETWORKING. All rights reserved.</p>
         </div>
+    </footer>
 
-        <!-- Refresh Action Footer -->
-        <div class="refresh-container">
-            <button class="refresh-btn" id="refresh-users-btn">
-                <svg class="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path>
-                </svg>
-                Refresh Online Users
-            </button>
-        </div>
-    </div>
-</main>
-<!-- ================= LIVE SECTIONS ================= -->
-
-<!-- 1. M-PESA STK PUSH SERVICE -->
-<div class="live-rainbow-enclosure mpesa-status-bar">
-    <div class="mpesa-status-content">
-        <span class="stk-live-dot"></span>
-        <span class="mpesa-text" id="mpesa-status-text">M-Pesa STK Push Service — <span class="highlight-green">Loading...</span></span>
-    </div>
-</div>
-
-<!-- 2. ROUTER STATUS SECTION -->
-<div class="live-rainbow-enclosure">
-    <div class="router-status-container">
-        <div class="router-status-header">
-            <div class="header-title">
-                <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="7" height="9" rx="1"></rect>
-                    <rect x="14" y="3" width="7" height="5" rx="1"></rect>
-                    <rect x="14" y="12" width="7" height="9" rx="1"></rect>
-                    <rect x="3" y="16" width="7" height="5" rx="1"></rect>
-                </svg>
-                <h2>Router Status</h2>
-            </div>
-            <div class="header-badges">
-                <span class="badge badge-green" id="badge-online">
-                    <span class="badge-icon">✓</span> 0 Online
-                </span>
-                <span class="badge badge-red" id="badge-offline">
-                    <span class="badge-icon">×</span> 0 Offline
-                </span>
-            </div>
-        </div>
-
-        <!-- Router Cards dynamically injected here -->
-        <div class="router-status-grid" id="router-status-grid"></div>
-    </div>
-</div>
-
-<!-- 3. MONTHLY REGISTERED CUSTOMERS SECTION -->
-<div class="live-rainbow-enclosure">
-    <div class="chart-panel">
-        <div class="chart-panel-header">
-            <div class="chart-title">
-                <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="7" height="9" rx="1"></rect>
-                    <rect x="14" y="3" width="7" height="5" rx="1"></rect>
-                    <rect x="14" y="12" width="7" height="9" rx="1"></rect>
-                    <rect x="3" y="16" width="7" height="5" rx="1"></rect>
-                </svg>
-                <h2>Monthly Registered Customers</h2>
-            </div>
-            <div class="chart-actions">
-                <button class="action-btn minimize-btn">−</button>
-                <button class="action-btn close-btn">×</button>
-            </div>
-        </div>
-        <div class="chart-body">
-            <div class="chart-legend">
-                <span class="legend-color-box members-box"></span> Registered Members
-            </div>
-            <div class="vector-chart-container">
-                <div class="y-axis-ticks y-axis-customers">
-                    <span>50</span><span>40</span><span>30</span><span>20</span><span>10</span><span>0</span>
-                </div>
-                <div class="chart-graph-wrapper chart-1-grid">
-                    <div class="grid-lines-container">
-                        <div class="grid-h-line" style="bottom: 30px;"></div>
-                        <div class="grid-h-line" style="bottom: 60px;"></div>
-                        <div class="grid-h-line" style="bottom: 90px;"></div>
-                        <div class="grid-h-line" style="bottom: 120px;"></div>
-                        <div class="grid-h-line" style="bottom: 150px;"></div>
-                    </div>
-                    <!-- Monthly bars generated here via JS -->
-                    <div class="bars-container" id="chart-customers-bars"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- 4. TOTAL MONTHLY SALES SECTION -->
-<div class="live-rainbow-enclosure">
-    <div class="chart-panel">
-        <div class="chart-panel-header">
-            <div class="chart-title">
-                <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                </svg>
-                <h2>Total Monthly Sales</h2>
-            </div>
-            <div class="chart-actions">
-                <button class="action-btn minimize-btn">−</button>
-                <button class="action-btn close-btn">×</button>
-            </div>
-        </div>
-        <div class="chart-body">
-            <div class="chart-legend">
-                <span class="legend-color-box sales-box"></span> Monthly Sales
-            </div>
-            <div class="vector-chart-container">
-                <div class="y-axis-ticks y-axis-sales">
-                    <span>30,000</span><span>25,000</span><span>20,000</span><span>15,000</span><span>10,000</span><span>5,000</span><span>0</span>
-                </div>
-                <div class="chart-graph-wrapper chart-2-grid">
-                    <div class="grid-lines-container">
-                        <div class="grid-h-line" style="bottom: 30px;"></div>
-                        <div class="grid-h-line" style="bottom: 60px;"></div>
-                        <div class="grid-h-line" style="bottom: 90px;"></div>
-                        <div class="grid-h-line" style="bottom: 120px;"></div>
-                        <div class="grid-h-line" style="bottom: 150px;"></div>
-                        <div class="grid-h-line" style="bottom: 180px;"></div>
-                    </div>
-                    <!-- Monthly sales bars generated here via JS -->
-                    <div class="bars-container blue-purple-bars" id="chart-sales-bars"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- ================= LIVE SECTIONS ================= -->
-
-<!-- 1. TODAY'S DATA USAGE -->
-<div class="live-rainbow-enclosure">
-    <div class="panel-header-simple">
-        <h2>Today's Data Usage</h2>
-    </div>
-    <div class="usage-stats-content">
-        <div class="mini-chart-legend">
-            <span class="legend-pill upload-pill"></span> Upload
-            <span class="legend-pill download-pill" style="margin-left: 15px;"></span> Download
-        </div>
-        <div class="usage-metrics-list">
-            <p><strong>Upload:</strong> <span id="today-upload">0 B</span></p>
-            <p><strong>Download:</strong> <span id="today-download">0 B</span></p>
-            <p><strong>Total:</strong> <span id="today-total">0 B</span></p>
-            <p><strong>Date:</strong> <span id="today-date">--</span></p>
-        </div>
-    </div>
-</div>
-
-<!-- 2. WEEKLY DATA USAGE -->
-<div class="live-rainbow-enclosure">
-    <div class="panel-header-simple">
-        <h2>Weekly Data Usage</h2>
-        <div class="mini-chart-legend">
-            <span class="legend-pill upload-pill"></span> Upload
-            <span class="legend-pill download-pill" style="margin-left: 15px;"></span> Download
-        </div>
-    </div>
-    <div class="scrollable-chart-area">
-        <div class="chart-scroll-content">
-            <div class="chart-y-axis" id="weekly-y-axis"></div>
-            <div class="chart-canvas-container">
-                <div class="chart-bars-scroll-row" id="weekly-usage-container">
-                    <!-- Dynamic weekly bars injected here -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- 3. MONTHLY DATA USAGE -->
-<div class="live-rainbow-enclosure">
-    <div class="panel-header-simple">
-        <h2>Monthly Data Usage</h2>
-        <div class="mini-chart-legend">
-            <span class="legend-pill upload-pill"></span> Upload
-            <span class="legend-pill download-pill" style="margin-left: 15px;"></span> Download
-        </div>
-    </div>
-    <div class="scrollable-chart-area">
-        <div class="chart-scroll-content">
-            <div class="chart-y-axis" id="monthly-y-axis"></div>
-            <div class="chart-canvas-container">
-                <div class="chart-bars-scroll-row" id="monthly-usage-container">
-                    <!-- Dynamic monthly bars injected here -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- 4. VOUCHERS STOCK -->
-<div class="live-rainbow-enclosure">
-    <div class="panel-header-simple">
-        <h2>Vouchers Stock</h2>
-    </div>
-    <table class="vouchers-table">
-        <thead>
-            <tr><th>PLAN NAME</th><th>UNUSED</th><th>USED</th></tr>
-        </thead>
-        <tbody id="vouchers-stock-body">
-            <!-- Dynamic rows injected here -->
-        </tbody>
-    </table>
-</div>
-
-<!-- 5. CUSTOMERS GROWTH -->
-<div class="live-rainbow-enclosure">
-    <div class="panel-header-simple">
-        <div class="header-title-flex">
-            <svg class="chart-growth-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 3v18h18M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path>
-            </svg>
-            <h2>Customers Growth</h2>
-        </div>
-    </div>
-    <div class="scrollable-chart-area">
-        <div class="chart-scroll-content">
-            <div class="chart-y-axis" id="growth-y-axis"></div>
-            <div class="chart-canvas-container">
-                <div class="chart-bars-scroll-row" id="growth-chart-container">
-                    <!-- Dynamic growth nodes injected here -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- 6. USERS EXPIRING TODAY -->
-<div class="live-rainbow-enclosure">
-    <div class="panel-header-simple">
-        <h2>Users Expiring Today</h2>
-    </div>
-    <div class="scrollable-table-wrapper">
-        <table class="equal-cols-table three-cols">
-            <thead>
-                <tr><th>USERNAME</th><th>CREATED ON</th><th>EXPIRES ON</th></tr>
-            </thead>
-            <tbody id="expiring-users-body">
-                <!-- Dynamic rows injected here -->
-            </tbody>
-        </table>
-    </div>
-    <div class="table-pagination" id="expiring-users-pagination"></div>
-</div>
-
-<!-- 7. PAYMENT GATEWAY -->
-<div class="live-rainbow-enclosure">
-    <div class="panel-header-simple">
-        <h2>Payment Gateway: OwnMpesaDetails</h2>
-    </div>
-    <div class="mpesa-gateway-content">
-        <div class="mpesa-status-content">
-            <span class="stk-live-dot"></span> 
-            <span>MPesa STK Engine: <span class="highlight-green" id="mpesa-gateway-status">CHECKING...</span></span>
-        </div>
-    </div>
-</div>
-
-<!-- 8. ALL USERS INSIGHTS -->
-<div class="live-rainbow-enclosure">
-    <div class="panel-header-simple" style="justify-content: center;">
-        <h2>All Users Insights</h2>
-    </div>
-    <div class="pie-chart-section-wrapper">
-        <div class="insights-pie-chart" id="users-pie-chart"></div>
-        <div class="pie-chart-legend">
-            <span class="legend-item"><span class="legend-color active-color"></span> Active</span>
-            <span class="legend-item"><span class="legend-color expired-color"></span> Expired</span>
-            <span class="legend-item"><span class="legend-color inactive-color"></span> Inactive</span>
-        </div>
-    </div>
-</div>
-
-<!-- 9. BEST SELLING PACKAGES -->
-<div class="live-rainbow-enclosure">
-    <div class="panel-header-simple">
-        <h2>Best Selling Packages Per Month</h2>
-    </div>
-    <div class="scrollable-table-wrapper">
-        <table class="equal-cols-table four-cols">
-            <thead>
-                <tr><th>PACKAGE</th><th>PRICE</th><th>SALES</th><th>REVENUE</th></tr>
-            </thead>
-            <tbody id="best-selling-body">
-                <!-- Dynamic rows injected here -->
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<!-- 10. TRANSACTIONS PER ROUTER -->
-<div class="live-rainbow-enclosure">
-    <div class="panel-header-simple">
-        <h2>Transactions per Router</h2>
-    </div>
-    <div class="scrollable-table-wrapper">
-        <table class="equal-cols-table four-cols">
-            <thead>
-                <tr><th>ROUTER</th><th>TRANSACTIONS</th><th>PERCENTAGE</th><th>AMOUNT</th></tr>
-            </thead>
-            <tbody id="router-trans-body">
-                <!-- Dynamic rows injected here -->
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<!-- 11. LAST 5 TRANSACTIONS -->
-<div class="live-rainbow-enclosure">
-    <div class="panel-header-simple">
-        <h2>Last 5 Transactions</h2>
-    </div>
-    <div class="scrollable-table-wrapper">
-        <table class="equal-cols-table three-cols">
-            <thead>
-                <tr><th>USERNAME</th><th>AMOUNT</th><th>DATE</th></tr>
-            </thead>
-            <tbody id="last-trans-body">
-                <!-- Dynamic rows injected here -->
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<!-- Footer Section -->
-<footer class="admin-footer">
-    <div class="footer-content">
-        <p class="copyright">&copy; 2026 COBU-TECH INDUSTRIES NETWORKING. All rights reserved.</p>
-    </div>
-</footer>
-
-<script src="administration.js"></script>
+    <script src="administration.js"></script>
 </body>
-</html>
+</html> 
+
