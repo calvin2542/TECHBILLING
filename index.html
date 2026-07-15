@@ -544,6 +544,15 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="refresh-container">
+                        <button class="refresh-btn" id="refresh-users-btn">
+                            <svg class="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path>
+                            </svg>
+                            Refresh Online Users
+                        </button>
+                    </div>
                 </div>
 
                 <div class="live-rainbow-enclosure mpesa-status-bar">
@@ -687,8 +696,7 @@
                         <div class="chart-scroll-content">
                             <div class="chart-y-axis" id="weekly-y-axis"></div>
                             <div class="chart-canvas-container">
-                                <div class="chart-bars-scroll-row" id="weekly-usage-container">
-                                    </div>
+                                <div class="chart-bars-scroll-row" id="weekly-usage-container"></div>
                             </div>
                         </div>
                     </div>
@@ -706,8 +714,7 @@
                         <div class="chart-scroll-content">
                             <div class="chart-y-axis" id="monthly-y-axis"></div>
                             <div class="chart-canvas-container">
-                                <div class="chart-bars-scroll-row" id="monthly-usage-container">
-                                    </div>
+                                <div class="chart-bars-scroll-row" id="monthly-usage-container"></div>
                             </div>
                         </div>
                     </div>
@@ -721,8 +728,7 @@
                         <thead>
                             <tr><th>PLAN NAME</th><th>UNUSED</th><th>USED</th></tr>
                         </thead>
-                        <tbody id="vouchers-stock-body">
-                            </tbody>
+                        <tbody id="vouchers-stock-body"></tbody>
                     </table>
                 </div>
 
@@ -739,8 +745,7 @@
                         <div class="chart-scroll-content">
                             <div class="chart-y-axis" id="growth-y-axis"></div>
                             <div class="chart-canvas-container">
-                                <div class="chart-bars-scroll-row" id="growth-chart-container">
-                                    </div>
+                                <div class="chart-bars-scroll-row" id="growth-chart-container"></div>
                             </div>
                         </div>
                     </div>
@@ -755,8 +760,7 @@
                             <thead>
                                 <tr><th>USERNAME</th><th>CREATED ON</th><th>EXPIRES ON</th></tr>
                             </thead>
-                            <tbody id="expiring-users-body">
-                                </tbody>
+                            <tbody id="expiring-users-body"></tbody>
                         </table>
                     </div>
                     <div class="table-pagination" id="expiring-users-pagination"></div>
@@ -797,8 +801,7 @@
                             <thead>
                                 <tr><th>PACKAGE</th><th>PRICE</th><th>SALES</th><th>REVENUE</th></tr>
                             </thead>
-                            <tbody id="best-selling-body">
-                                </tbody>
+                            <tbody id="best-selling-body"></tbody>
                         </table>
                     </div>
                 </div>
@@ -812,8 +815,7 @@
                             <thead>
                                 <tr><th>ROUTER</th><th>TRANSACTIONS</th><th>PERCENTAGE</th><th>AMOUNT</th></tr>
                             </thead>
-                            <tbody id="router-trans-body">
-                                </tbody>
+                            <tbody id="router-trans-body"></tbody>
                         </table>
                     </div>
                 </div>
@@ -827,22 +829,27 @@
                             <thead>
                                 <tr><th>USERNAME</th><th>AMOUNT</th><th>DATE</th></tr>
                             </thead>
-                            <tbody id="last-trans-body">
-                                </tbody>
+                            <tbody id="last-trans-body"></tbody>
                         </table>
                     </div>
                 </div>
 
-                <div class="refresh-container">
-                    <button class="refresh-btn" id="refresh-users-btn">
-                        <svg class="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path>
-                        </svg>
-                        Refresh Online Users
-                    </button>
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Activity Log</h2>
+                    </div>
+                    <div class="activity-log-container" id="activity-log-container">
+                        <div class="activity-subsection">
+                            <span style="text-align: center; color: #888; width: 100%; display: block;">No records found</span>
+                        </div>
+                    </div>
                 </div>
 
-            </div> </main> </div> <footer class="admin-footer">
+            </div>
+        </main>
+    </div>
+
+    <footer class="admin-footer">
         <div class="footer-content">
             <p class="copyright">&copy; 2026 COBU-TECH INDUSTRIES NETWORKING. All rights reserved.</p>
         </div>
@@ -851,4 +858,3 @@
     <script src="administration.js"></script>
 </body>
 </html> 
-
