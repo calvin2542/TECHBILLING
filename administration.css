@@ -1,0 +1,1581 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-screen Deep Navy Blue Canvas */
+body {
+    background-color: #0a192f;
+    min-height: 150vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #e2e8f0;
+    overflow-x: hidden; /* Crucial to prevent horizontal scroll bars during push mechanics */
+}
+
+/* --- HEADER SECTION (Exactly 100px Height) --- */
+.admin-header {
+    height: 100px;
+    width: 100%;
+    background-color: #020c1b;
+    display: flex;
+    align-items: flex-start; /* Allows top margin-based alignment */
+    padding: 0;
+    border-bottom: 1px solid #1e293b;
+    position: relative;
+}
+
+/* Left Stack: Circle Logo & Menu Button (Totaling 100px) */
+.header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    margin-left: 5px;   /* Gap from left edge does not pass 5px */
+    margin-right: 10px; /* Gap between logo/controls and vertical line */
+}
+
+.logo-circle {
+    width: 60px;        /* Exact 50px width */
+    height: 60px;       /* Exact 50px height */
+    margin-top: 5px;    /* Gap of 5px from upper part of the page */
+    border-radius: 50%;
+    border: 2px solid #00f0ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a192f;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.25);
+}
+
+.web-logo {
+    width: 24px;
+    height: 24px;
+    stroke: #00f0ff;
+}
+
+/* Navigation Side Bar Toggle */
+.nav-toggle {
+    height: 40px;       /* Consumes the exact 40px remaining */
+    width: 100%;
+    margin-top: 2px;    /* Gap of 5px below the logo circle */
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-toggle .bar {
+    width: 24px;
+    height: 5px;
+    background-color: #8892b0;
+    border-radius: 2px;
+}
+
+/* Vertical Separation Line */
+.vertical-divider {
+    width: 5px;
+    height: 100px;
+    margin-top: 0px;   /* Vertically centers the line within the 100px header */
+    background-color: #1e293b;
+    margin-right: 30px;
+    margin-left:10px;   /* 10px gap between vertical line and website name */
+}
+
+/* Right Side Main Area (Stacked Layout: Title top, Search bottom) */
+.header-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.brand-title {
+    height: 30px;       /* Exact 30px height */
+    margin-top: 10px;   /* Gap of 10px from the top */
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffffff;
+    line-height: 30px;  /* Centers text vertically within its 30px boundary */
+}
+
+/* Rainbow Glowing Search Bar Container */
+.search-container {
+    position: relative;
+    height: 20px;       /* Exact 20px height */
+    margin-top: 20px;   /* Gap of 20px between website name and search bar */
+    width: 100%;
+    max-width: 150px; 
+    text-align: center;    /* Set clean half-width boundaries so it doesn't surpass title */
+    border-radius: 10px;
+    padding: 1.5px;     /* Tightened border wrap for thin 20px profile */
+    background: linear-gradient(90deg, #ff0055, #7f00ff, #00bfff, #ff00aa, #ffcc00, #ff0055);
+    background-size: 400%;
+    animation: rainbow-shift 8s linear infinite;
+}
+
+.search-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 10px;
+    background: inherit;
+    background-size: inherit;
+    z-index: -1;
+    filter: blur(4px);
+    animation: inherit;
+    opacity: 0.6;
+}
+
+.search-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background-color: #0a192f;
+    color: #ffffff;
+    font-size: 0.75rem;
+}
+
+/* --- FOOTER SECTION --- */
+.admin-footer {
+    height: 80px;
+    width: 100%;
+    background-color: #020c1b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #1e293b;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #64748b;
+    letter-spacing: 0.5px;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes rainbow-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Base stack layout for the right column elements */
+.header-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Yellow Coded Notification Bell Setup */
+.notification-bell {
+    height: 30px;
+    width: 20px;
+    margin-top: 5px;
+    margin-right: 30px;
+    color: #ffcc00; /* Vibrant administration yellow */
+}
+
+/* Circular Admin Profile Picture Framework */
+.admin-profile-circle {
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #1e293b;
+    border: 1px solid #00f0ff;
+}
+
+.admin-profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Horizontal Name & Status Row spacing components */
+.admin-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px; /* Exact 10px gap remaining to ground baseline space */
+}
+
+/* Rainbow Glow Border Line for Admin Name Section */
+.admin-name-glow {
+    width: 50px;
+    height: 10px;
+    border-radius: 3px;
+    padding: 1px; /* Controls border thickness */
+    background: linear-gradient(90deg, #ff0055, #7f00ff, #00bfff, #ff00aa, #ffcc00, #ff0055);
+    background-size: 400%;
+    animation: rainbow-shift 8s linear infinite;
+}
+
+.admin-name-box {
+    width: 100%;
+    height: 100%;
+    background-color: #020c1b; /* Matches header background to show inner text cleanly */
+    border-radius: 2px;
+    font-size: 7px;
+    line-height: 8px; /* Perfectly aligns text inside the 8px remaining height */
+    color: #e2e8f0;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Rainbow Glow Border Line for Status Section */
+.admin-status-glow {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    padding: 1px; /* Controls border thickness */
+    background: linear-gradient(90deg, #ff0055, #7f00ff, #00bfff, #ff00aa, #ffcc00, #ff0055);
+    background-size: 400%;
+    animation: rainbow-shift 8s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-status-dot {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #00ff66; /* Active live status color profile */
+    box-shadow: 0 0 4px rgba(0, 255, 102, 0.6);
+}
+/* --- UPDATED BLOCKS --- */
+
+/* 1. Structural wrapper must allow flex alignment and hide off-canvas slides */
+.admin-wrapper {
+    display: flex;
+    align-items: stretch; /* MAGIC: Forces sidebar and main content to scale to the exact same height! */
+    min-height: calc(100vh - 100px); /* Fills the rest of the screen below the 100px header */
+    background-color: #11141a; 
+    overflow: hidden; /* Prevents unwanted horizontal scrollbars when pushing */
+}
+
+/* 2. Update Sidebar defaults: must be position relative to slide organically */
+.sidebar-panel {
+    position: relative; /* Removed absolute/sticky layouts to allow true physical pushing */
+    background-color: #020c1b;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0; /* Ensures the sidebar doesn't compress or squeeze */
+    transition: margin-left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 10;
+    
+    /* FIX: Removed locked height/overflow rules so it stretches dynamically with the page */
+    min-height: 100%; 
+}
+
+/* 3px Glowing Rainbow Seam Boundary attached to the right boundary of sidebar */
+.sidebar-panel::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 3px;
+    
+    /* FIX: Anchored to the top and bottom limits of the sidebar container. 
+       This forces the line to scale perfectly alongside the sidebar at any height. */
+    top: 0;
+    bottom: 0;
+    
+    background: linear-gradient(180deg, #ff0055, #7f00ff, #00bfff, #ff00aa, #ffcc00, #ff0055);
+    background-size: 100% 400%;
+    animation: rainbow-shift 8s linear infinite;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.8), 0 0 20px rgba(255, 0, 85, 0.4);
+    z-index: 11;
+    pointer-events: none;
+}
+
+/* 3. Main content transitions alongside sidebar margins */
+.main-content {
+    flex: 1;
+    width: 100%;
+    flex-shrink: 0; /* Retains actual design scale when pushing off-screen */
+    transition: margin-left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+}
+
+.close-panel-btn {
+    background: none;
+    border: none;
+    color: #8892b0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+    line-height: 1;
+    padding: 5px 15px;
+}
+
+.close-panel-btn:hover {
+    color: #00f0ff;
+    transform: scale(1.15);
+}
+
+
+
+/* --- ADD THIS ENTIRE RESPONSIVE MEDIA GRID FOR BREAKPOINTS --- */
+
+/* Mobile Breakpoint (<768px): Sidebar is stretched to 50% and pushes main-content */
+@media (max-width: 767px) {
+    .sidebar-panel {
+        width: 50%;
+        margin-left: -50%;
+    }
+    .sidebar-panel.open {
+        margin-left: 0; /* Slides in, pushing main content 50% out of bounds */
+    }
+}
+
+/* Laptop & Tablet Breakpoint (768px to 1199px): Sidebar is 30% and pushes main-content */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .sidebar-panel {
+        width: 30%;
+        margin-left: -30%;
+    }
+    .sidebar-panel.open {
+        margin-left: 0; /* Slides in, pushing main content 30% out of bounds */
+    }
+}
+
+/* Desktop & PC Breakpoint (1200px+): Sidebar is 30%, Main Content SHRINKS to 70% */
+@media (min-width: 1200px) {
+    .sidebar-panel {
+        width: 30%;
+        margin-left: -30%;
+    }
+    .sidebar-panel.open {
+        margin-left: 0;
+    }
+    /* When open, changes flex properties on the sibling elements to compress size cleanly */
+    .sidebar-panel.open + .main-content {
+        width: 70%;
+        flex-shrink: 1; 
+    }
+}
+
+
+/* --- SIDEBAR PANEL CONTENTS --- */
+
+.sidebar-nav-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 15px 30px 15px;
+}
+
+/* Menu Search Bar Setup */
+.sidebar-search-box {
+    position: relative;
+    width: 100%;
+    height: 36px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #0c1a30;
+    border: 1px solid #1e293b;
+    border-radius: 6px;
+    padding: 0 10px;
+}
+
+.sidebar-search-icon {
+    width: 16px;
+    height: 16px;
+    color: #8892b0;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.sidebar-search-input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 0.85rem;
+}
+
+.sidebar-search-input::placeholder {
+    color: #8892b0;
+}
+
+/* Scrollable Navigation Menu */
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    text-decoration: none;
+    border-radius: 6px;
+    color: #8892b0;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.menu-item:hover {
+    background-color: #0c1a30;
+    color: #00f0ff;
+}
+
+.menu-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    color: inherit;
+    flex-shrink: 0;
+}
+
+.menu-text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Indicators and Badges */
+.menu-arrow {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #4b5563;
+    transition: transform 0.2s ease;
+    margin-left: 8px;
+}
+
+.menu-item:hover .menu-arrow {
+    color: #00f0ff;
+}
+
+.badge-new {
+    background-color: #10b981;
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 5px;
+    line-height: 1;
+}
+
+
+
+.dashboard-container {
+    padding: 30px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.dashboard-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+/* --- ROUTER VIEW CONTAINER BLOCK --- */
+.router-section {
+    background-color: #0c1a30;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.router-header {
+    background-color: #112240;
+    border-bottom: 1px solid #1e293b;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.router-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.router-header-icon {
+    width: 20px;
+    height: 20px;
+    color: red;
+}
+
+.router-select {
+    background-color: #0a192f;
+    color: #e2e8f0;
+    border: 1px solid #1e293b;
+    padding: 6px 12px;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+/* Responsive Grid columns layout: 2 columns on small views, 3 on wider views */
+.router-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+@media (min-width: 992px) {
+    .router-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.router-card {
+    background-color: #112240;
+    border: 1px solid #1e293b;
+    border-radius: 6px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.router-card:hover {
+    border-color: #00f0ff;
+}
+
+.router-name {
+    font-size: 0.95rem;
+    color: #38bdf8;
+    font-weight: 500;
+}
+
+.router-stats {
+    display: flex;
+    gap: 12px;
+    font-size: 0.8rem;
+}
+
+.stat-dot-green {
+    color: #10b981;
+}
+
+.stat-check {
+    color: #3b82f6;
+}
+
+.stat-cross {
+    color: #ef4444;
+}
+/* --- METRICS / STATS CARDS SECTION --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.stat-card {
+    background-color: #112240;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+}
+
+.stat-card-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.stat-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.stat-title {
+    font-size: 0.8rem;
+    color: #8892b0;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.eye-icon {
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.eye-icon:hover {
+    color: #ffffff;
+}
+
+.stat-link {
+    font-size: 0.8rem;
+    color: #8892b0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 10px;
+    transition: color 0.2s ease;
+}
+
+.stat-link:hover {
+    color: #00f0ff;
+}
+
+.stat-card-right {
+    color: #334155;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+}
+
+/* --- REFRESH ACTIONS CONTAINER --- */
+.refresh-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.refresh-btn {
+    background-color: #00f0ff;
+    color: #020c1b;
+    border: none;
+    outline: none;
+    padding: 10px 18px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.refresh-btn:hover {
+    background-color: #00d8f6;
+}
+
+.refresh-btn:active {
+    transform: scale(0.98);
+}
+
+.refresh-icon {
+    width: 16px;
+    height: 16px;
+}
+/* Glowing Rainbow Enclosure Wrapper */
+.rainbow-enclosure {
+    position: relative;
+    border-radius: 12px;
+    background: #11141a; /* Match your main content background panel color */
+    padding: 24px;
+    margin-bottom: 32px;
+    box-sizing: border-box;
+    
+    /* 2px transparent border to make space for the gradient background clip */
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    
+    /* Inner dark background layered on top of outer glowing rainbow gradient border */
+    background-image: 
+        linear-gradient(#11141a, #11141a), 
+        linear-gradient(135deg, #ff007f, #7f00ff, #00f0ff, #00ff7f, #ff007f);
+    
+    /* Subtle neon shadow matching the color spectrum */
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 0 15px rgba(127, 0, 255, 0.15);
+}
+
+/* Optional: Subtle inner gradient animation for active styling */
+.rainbow-enclosure::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff007f, #7f00ff, #00f0ff, #00ff7f, #ff007f);
+    z-index: -1;
+    opacity: 0.25;
+    filter: blur(8px);
+}
+/* ==========================================================================
+   DASHBOARD UPGRADE: LIVE GLOWING RAINBOW ENCLOSURES & GRAPHICS SYSTEM
+   ========================================================================== */
+
+/* 1. True Live Animated Conic-Gradient Rainbow Enclosure */
+.live-rainbow-enclosure {
+    position: relative;
+    border-radius: 12px;
+    background: #0f1219; /* Seamless panel match */
+    padding: 24px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    box-sizing: border-box;
+    
+    /* Dual layer rendering to generate real boundary borders */
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: 
+        linear-gradient(#0f1219, #0f1219), 
+        linear-gradient(135deg, #ff0055, #7f00ff, #00bfff, #ff00aa, #ffcc00, #ff0055);
+    background-size: 100% 100%, 300% 300%;
+    
+    /* Smooth Live Movement of Border Colors */
+    animation: live-rainbow-shift 8s ease infinite;
+    
+    /* Neon back-glow */
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 0 15px rgba(127, 0, 255, 0.2);
+}
+
+@keyframes live-rainbow-shift {
+    0% { background-position: 0% 50%, 0% 50%; }
+    50% { background-position: 100% 50%, 100% 50%; }
+    100% { background-position: 0% 50%, 0% 50%; }
+}
+
+/* 2. M-Pesa STK Layout & Dimming Glow Pulse */
+.mpesa-status-bar {
+    padding: 18px 24px !important; /* Overwrite enclosure standard */
+}
+.mpesa-status-content {
+    display: flex;
+    align-items: center;
+    color: #8892b0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.highlight-green {
+    color: #00ff7f;
+    font-weight: 600;
+}
+
+/* Pulsing Flowing Live Dot (Dimming Effect) */
+.stk-live-dot {
+    width: 11px;
+    height: 11px;
+    background-color: #00ff7f;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 12px;
+    position: relative;
+    animation: stk-pulse-dimming 2.5s infinite ease-in-out;
+}
+
+@keyframes stk-pulse-dimming {
+    0%, 100% {
+        transform: scale(0.9);
+        opacity: 0.35;
+        box-shadow: 0 0 4px rgba(0, 255, 127, 0.4);
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+        box-shadow: 0 0 15px rgba(0, 255, 127, 0.9), 0 0 30px rgba(0, 255, 127, 0.5);
+    }
+}
+
+/* 3. Router Status Section Styling */
+.router-status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1d2330;
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+}
+.router-status-header .header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ccd6f6;
+}
+.router-status-header .header-icon {
+    width: 22px;
+    height: 22px;
+    color: #8892b0;
+}
+.router-status-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+.header-badges {
+    display: flex;
+    gap: 12px;
+}
+.header-badges .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+.badge-green { background-color: #00aa66; }
+.badge-red { background-color: #cc2a36; }
+
+/* 4. Responsive Router Column Grid: 2 columns on small/medium, 3 columns on big devices */
+.router-status-grid {
+    display: grid;
+    gap: 16px;
+}
+
+/* Medium Devices (Base / Small Device Target) -> Exactly 2 Columns */
+@media (max-width: 1279px) {
+    .router-status-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Larger Screen Target -> Exactly 3 Columns */
+@media (min-width: 1280px) {
+    .router-status-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Fallback for ultra-narrow phones */
+@media (max-width: 580px) {
+    .router-status-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 5. Router Status Card Styling */
+.router-status-card {
+    background: #090c13;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-left: 4px solid #cc2a36; /* Left reddish accent strip */
+    border-top: 1px solid #1a2233;
+    border-right: 1px solid #1a2233;
+    border-bottom: 1px solid #1a2233;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.router-status-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+.card-left {
+    margin-right: 14px;
+}
+.status-circle-offline {
+    width: 24px;
+    height: 24px;
+    background-color: #cc2a36;
+    border-radius: 50%;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.card-center {
+    flex: 1;
+}
+.router-title {
+    color: #ccd6f6;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+.router-sub-status {
+    font-size: 0.75rem;
+    color: #707b9e;
+    margin-bottom: 8px;
+}
+.dot-separator {
+    color: #ff0055;
+    margin: 0 4px;
+}
+.card-refresh-btn {
+    background-color: #00f0ff;
+    border: none;
+    border-radius: 4px;
+    color: #020c1b;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+}
+.card-refresh-btn:hover {
+    opacity: 0.9;
+}
+.card-refresh-btn svg {
+    width: 11px;
+    height: 11px;
+}
+.card-right {
+    font-size: 0.75rem;
+    color: #5d6785;
+    font-weight: 500;
+    padding-left: 10px;
+    text-align: right;
+    min-width: 70px;
+}
+
+/* ==========================================================================
+   6. Vector Charts Framework & Realism Layout (MATCHED TO NEW LAYOUT)
+   ========================================================================== */
+.chart-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1d2330;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    gap: 10px;
+}
+.chart-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ccd6f6;
+}
+.chart-title .header-icon {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    color: #a0aec0;
+}
+.chart-title h2 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+    color: #ccd6f6;
+}
+.chart-actions {
+    display: flex;
+    gap: 8px;
+}
+.chart-actions .action-btn {
+    background-color: #00c3ff1a;
+    border: 1px solid #00c3ff40;
+    color: #00f0ff;
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.chart-legend {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #8892b0;
+    margin-bottom: 24px;
+}
+.legend-color-box {
+    width: 18px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 8px;
+    display: inline-block;
+}
+.members-box { background-color: #0010d9; border: 1px solid #3366ff; }
+.sales-box { background-color: #0010d9; border: 1px solid #c400ff; }
+
+/* SVG Graph Coordinate Base - Fixed at 70px with Two-Way Scroll */
+.vector-chart-container {
+    display: flex;
+    align-items: flex-end;
+    height: 70px;             /* Strict 70px height matching your other charts */
+    overflow: auto;           /* Full up-down and left-right scrolling rules */
+    background: #06090e;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #141a29;
+    position: relative;
+}
+
+/* Matching Modern Thin Scrolling Track */
+.vector-chart-container::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.vector-chart-container::-webkit-scrollbar-track {
+    background: #06090e;
+}
+.vector-chart-container::-webkit-scrollbar-thumb {
+    background: #1b2336;
+    border-radius: 3px;
+}
+.vector-chart-container::-webkit-scrollbar-thumb:hover {
+    background: #00f0ff;
+}
+
+/* Y-Axis Configured with strict 30px vertical gap increments */
+.y-axis {
+    display: flex;
+    flex-direction: column-reverse; /* Bottom to top output */
+    gap: 30px;                      /* Perfect vertical alignment gap */
+    width: 50px;
+    color: #5d6785;
+    font-size: 0.75rem;
+    text-align: right;
+    padding-right: 12px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    border-right: 1px solid #1d2330;
+    margin-bottom: 22px;            /* Align offset base with X labels */
+}
+.y-axis span {
+    display: block;
+    height: 12px;
+    line-height: 12px;
+}
+
+/* Horizontal Canvas Wrapper with Wide Extension Compatibility */
+.chart-graph-wrapper {
+    flex: 1;
+    position: relative;
+    height: 100%;
+    min-width: max-content; /* Prevents compression and forces scroll when wide */
+}
+
+/* Subtle Gridlines mapped behind content */
+.grid-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 1;
+}
+.grid-lines .line {
+    border-bottom: 1px dashed rgba(29, 35, 48, 0.7);
+    width: 100%;
+    height: 0;
+}
+
+/* Columns Container spacing of exactly 30px */
+.bars-container {
+    position: relative;
+    display: flex;
+    gap: 30px;            /* 30px horizontal gaps between columns */
+    align-items: flex-end;
+    z-index: 2;
+    padding-left: 15px;
+    height: 100%;
+}
+
+/* Individual Columns sized static to lock intervals */
+.bar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 60px;          /* Matching default label width bounds */
+    height: 100%;
+    flex-shrink: 0;
+}
+
+/* Upgraded dynamic bar fill style */
+.bar-fill {
+    width: 100%;
+    max-width: 44px;
+    background-color: #0010d9;
+    border-top: 1.5px solid #0055ff;
+    border-left: 1px solid #0055ff;
+    border-right: 1px solid #0055ff;
+    border-radius: 2px 2px 0 0;
+    height: 0%; 
+    transition: height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Alternate purple design rules for sales metrics */
+.blue-purple-bars .bar-fill {
+    background-color: #0010d9;
+    border-top: 1.5px solid #a100ff;
+    border-left: 1px solid #a100ff;
+    border-right: 1px solid #a100ff;
+}
+
+.x-label {
+    font-size: 0.75rem;
+    color: #5d6785;
+    margin-top: 8px;
+    display: block;
+    height: 12px;
+    white-space: nowrap;
+}
+
+
+
+
+
+/* ==========================================================================
+   DATA USAGE AND VOUCHERS ADDITIONS (70px Scroll & 30px Precise Gaps)
+   ========================================================================== */
+
+/* Simple Standard Panel Header Layout */
+.panel-header-simple {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1d2330;
+    padding-bottom: 14px;
+    margin-bottom: 16px;
+}
+.panel-header-simple h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ccd6f6;
+    margin: 0;
+}
+.header-title-flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.chart-growth-icon {
+    width: 20px;
+    height: 20px;
+    color: #a0aec0;
+}
+
+/* Today's Data Stats List */
+.usage-stats-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.usage-metrics-list p {
+    margin: 6px 0;
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+.usage-metrics-list strong {
+    color: #ccd6f6;
+}
+
+/* Legend Styling matching colors of lines/bars in photo */
+.mini-chart-legend {
+    font-size: 0.8rem;
+    color: #8892b0;
+    display: flex;
+    align-items: center;
+}
+.legend-pill {
+    width: 14px;
+    height: 8px;
+    border-radius: 2px;
+    display: inline-block;
+}
+.upload-pill { background-color: #0088cc; }
+.download-pill { background-color: #00cc88; }
+
+/* 70px Height Restrictor Box with Two-Way Scrolling Enabled */
+.scrollable-chart-area {
+    height: 70px;
+    overflow: auto; /* Handles both vertical (up/down) and horizontal (left/right) overflows */
+    background: #06090e;
+    border-radius: 8px;
+    padding: 12px;
+    position: relative;
+    border: 1px solid #141a29;
+}
+
+/* High-tech Thin Scrolling Track Style */
+.scrollable-chart-area::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.scrollable-chart-area::-webkit-scrollbar-track {
+    background: #06090e;
+}
+.scrollable-chart-area::-webkit-scrollbar-thumb {
+    background: #1b2336;
+    border-radius: 3px;
+}
+.scrollable-chart-area::-webkit-scrollbar-thumb:hover {
+    background: #00f0ff;
+}
+
+/* Inner Layout Flex to ensure scroll triggers correctly */
+.chart-scroll-content {
+    display: flex;
+    align-items: flex-end;
+    min-width: max-content; /* Critical: Allows layout to stretch wide and trigger horizontal scroll */
+}
+
+/* Y-Axis: Fixed vertical gaping spacing of exactly 30px */
+.chart-y-axis {
+    display: flex;
+    flex-direction: column-reverse; /* Render bottom to top */
+    gap: 30px; /* Exact 30px vertical gaps between the axis metrics */
+    padding-right: 15px;
+    border-right: 1px solid #1d2330;
+    color: #5d6785;
+    font-size: 11px;
+    font-family: monospace;
+    flex-shrink: 0;
+    text-align: right;
+    margin-bottom: 22px; /* Bottom offset align offset with X labels */
+}
+.chart-y-axis span {
+    display: block;
+    height: 12px;
+    line-height: 12px;
+}
+
+/* Canvas Container spacing */
+.chart-canvas-container {
+    flex: 1;
+    padding-left: 15px;
+}
+
+/* X-Axis Horizontal row layout with exact 30px column spacing */
+.chart-bars-scroll-row {
+    display: flex;
+    gap: 30px; /* Exact 30px horizontal gaps between daily/monthly coordinates */
+    align-items: flex-end;
+}
+
+/* Individual Bar Columns */
+.chart-bar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 60px; /* Prevents compression of standard label texts */
+    flex-shrink: 0;
+}
+
+/* Bar graphics layout */
+.dual-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+}
+.bar-upload {
+    width: 7px;
+    background-color: #0088cc;
+    border-radius: 1px 1px 0 0;
+    box-shadow: 0 0 6px rgba(0, 136, 204, 0.4);
+}
+.bar-download {
+    width: 7px;
+    background-color: #00cc88;
+    border-radius: 1px 1px 0 0;
+    box-shadow: 0 0 6px rgba(0, 204, 136, 0.4);
+}
+
+/* Horizontal Axis Labels */
+.x-axis-label {
+    font-size: 11px;
+    color: #5d6785;
+    margin-top: 8px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Voucher Stock Table Modern Dark Layout */
+.vouchers-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    background-color: #06090e;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.vouchers-table th {
+    background-color: #111622;
+    color: #8892b0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid #1a2233;
+}
+.vouchers-table td {
+    color: #ccd6f6;
+    font-size: 0.85rem;
+    padding: 12px 16px;
+    border-bottom: 1px solid #141a29;
+}
+.vouchers-table tr:last-child td {
+    border-bottom: none;
+}
+.vouchers-table tr.total-row {
+    background-color: #111622;
+    font-weight: 700;
+}
+.highlight-cyan {
+    color: #00f0ff !important;
+    font-weight: bold;
+}
+
+/* Growth Graph Line Markers */
+.growth-dot-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Generates space inside scroll layout */
+}
+.dot-node {
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    border: 2px solid #00f0ff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px #00f0ff;
+}
+
+/* ==========================================================================
+   TABLE EQUAL LENGTH & SCROLLING / PIE CHART 80X80 CONSTRAINTS
+   ========================================================================== */
+
+/* 1. Horizontal Scroll Trigger for Tables on Narrow Screens */
+.scrollable-table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Activates auto-scroll whenever text overflows */
+    border-radius: 6px;
+    background-color: #06090e;
+    border: 1px solid #141a29;
+}
+
+/* Matching Modern Custom Scrollbars for the Tables */
+.scrollable-table-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+.scrollable-table-wrapper::-webkit-scrollbar-track {
+    background: #06090e;
+}
+.scrollable-table-wrapper::-webkit-scrollbar-thumb {
+    background: #1b2336;
+    border-radius: 3px;
+}
+.scrollable-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #00f0ff;
+}
+
+/* 2. Equal Column Layout Engine */
+.equal-cols-table {
+    width: 100%;
+    table-layout: fixed; /* Forces the browser to strictly respect designated widths */
+    border-collapse: collapse;
+    min-width: 600px;    /* Prevents severe columns squeezing on mobile */
+}
+
+/* Column Rules for 3-Column Tables */
+.equal-cols-table.three-cols th,
+.equal-cols-table.three-cols td {
+    width: 33.333%;      /* Keeps all 3 columns at identical widths */
+    padding: 12px 16px;
+    text-align: left;
+    color: #ccd6f6;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #141a29;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all; /* Stops long hashes/MACs from destroying cell layouts */
+}
+
+/* Column Rules for 4-Column Tables */
+.equal-cols-table.four-cols th,
+.equal-cols-table.four-cols td {
+    width: 25%;          /* Keeps all 4 columns at identical widths */
+    padding: 12px 16px;
+    text-align: left;
+    color: #ccd6f6;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #141a29;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+.equal-cols-table th {
+    background-color: #111622;
+    color: #8892b0 !important;
+    font-weight: 600;
+    font-size: 0.8rem !important;
+}
+
+.equal-cols-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Links inside tables */
+.user-link {
+    color: #00f0ff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.user-link:hover {
+    text-decoration: underline;
+}
+
+/* 3. Pagination Layout styling */
+.table-pagination {
+    display: flex;
+    justify-content: flex-start;
+    gap: 6px;
+    margin-top: 16px;
+}
+.pag-btn {
+    padding: 6px 12px;
+    background-color: #111622;
+    border: 1px solid #1a2233;
+    color: #ccd6f6;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+}
+.pag-btn.active {
+    background-color: #0088cc;
+    border-color: #0088cc;
+    color: #ffffff;
+    font-weight: 600;
+}
+.pag-btn:hover:not(.active) {
+    background-color: #1a2233;
+}
+
+/* 4. Perfect 80px x 80px Conic Pie Chart and Legend Alignments */
+.pie-chart-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.insights-pie-chart {
+    width: 80px !important;  /* Strictly enforced height & width */
+    height: 80px !important;
+    border-radius: 50%;
+    /* CSS conic-gradient mapping exact segments: Active (Teal), Expired (Brownish-red), Inactive (Dark Gray) */
+    background: conic-gradient(
+        #2e6b5c 0% 18%, 
+        #854a43 18% 24%, 
+        #2a334a 24% 100%
+    );
+    border: 2px solid #1a2233;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.pie-chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: #8892b0;
+}
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.legend-color.active-color { background-color: #2e6b5c; }
+.legend-color.expired-color { background-color: #854a43; }
+.legend-color.inactive-color { background-color: #2a334a; }

@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration</title>
+    <link class="style-ref" rel="stylesheet" href="administration.css">
+</head>
+<body>
+
+    <!-- Header Frame Section (Fixed 100px Height Matrix) -->
+    <header class="admin-header">
+        <div class="header-left">
+            <div class="logo-circle">
+                <svg class="web-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+            </div>
+            <button class="nav-toggle" id="navToggleBtn" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+
+        <div class="vertical-divider"></div>
+
+        <div class="header-main">
+            <h1 class="brand-title">COBU-TECH INDUSTRIES NETWORKING</h1>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search...">
+            </div>
+        </div>
+
+        <div class="header-right">
+            <svg class="notification-bell" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+            </svg>
+            <div class="admin-profile-circle">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=80&q=80" alt="Admin Profile">
+            </div>
+            <div class="admin-meta-row">
+                <div class="admin-name-glow"><div class="admin-name-box">Admin</div></div>
+                <div class="admin-status-glow"><div class="admin-status-dot"></div></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Structural Body Wrapper -->
+    <div class="admin-wrapper">
+        <!-- Slide-out Sidebar Panel (30% Width) -->
+        <aside class="sidebar-panel" id="sidebarPanel">
+            <div class="sidebar-header">
+                <button class="close-panel-btn" id="closePanelBtn">&lt;</button>
+            </div>
+            
+            <!-- Sidebar Navigation Menu -->
+            <div class="sidebar-nav-container">
+                <!-- Menu Search Bar -->
+                <div class="sidebar-search-box">
+                    <svg class="sidebar-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" placeholder="Search menu..." class="sidebar-search-input">
+                </div>
+
+                <!-- Navigation List -->
+                <nav class="sidebar-menu">
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="9"></rect>
+                            <rect x="14" y="3" width="7" height="5"></rect>
+                            <rect x="14" y="12" width="7" height="9"></rect>
+                            <rect x="3" y="16" width="7" height="5"></rect>
+                        </svg>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <span class="menu-text">Favorites</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+                    <!-- Admins (New Section) -->
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="8.5" cy="7" r="4"></circle>
+                            <polyline points="17 11 19 13 23 9"></polyline>
+                        </svg>
+                        <span class="menu-text">Admins</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <!-- Customers -->
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <span class="menu-text">Customers</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <!-- Activation -->
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                        <span class="menu-text">Activation</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                        <span class="menu-text">Data Usage</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <line x1="6" y1="12" x2="18" y2="12"></line>
+                        </svg>
+                        <span class="menu-text">Hotspot Vouchers</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg>
+                        <span class="menu-text">Hotspot Binding</span>
+                        <span class="badge-new">New</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                        <span class="menu-text">Packages/Plans</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
+                        <span class="menu-text">Transactions</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span class="menu-text">Support Ticket</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="menu-text">Notifications</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span class="menu-text">Network</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <polyline points="9 11 12 14 22 4"></polyline>
+                        </svg>
+                        <span class="menu-text">Bulk Actions</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <span class="menu-text">Static Pages</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                        </svg>
+                        <span class="menu-text">TR069 ACS</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                            <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                            <circle cx="12" cy="20" r="1"></circle>
+                        </svg>
+                        <span class="menu-text">Access Points</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="2" y1="10" x2="22" y2="10"></line>
+                        </svg>
+                        <span class="menu-text">Access PPPoE Routers</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="2"></circle>
+                            <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
+                        </svg>
+                        <span class="menu-text">Access Hotspot APs</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                        <span class="menu-text">Settings</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="4" y1="21" x2="4" y2="14"></line>
+                            <line x1="4" y1="10" x2="4" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12" y2="3"></line>
+                            <line x1="20" y1="21" x2="20" y2="16"></line>
+                            <line x1="20" y1="12" x2="20" y2="3"></line>
+                            <line x1="1" y1="14" x2="7" y2="14"></line>
+                            <line x1="9" y1="8" x2="15" y2="8"></line>
+                            <line x1="17" y1="16" x2="23" y2="16"></line>
+                        </svg>
+                        <span class="menu-text">PPPoE Settings</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 1 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span class="menu-text">Hotspot Settings</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 20h9"></path>
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                        </svg>
+                        <span class="menu-text">Page Builder</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="8"></circle>
+                            <path d="M12 2v20"></path>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                        <span class="menu-text">Loyalty Points</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                        <span class="menu-text">Extras</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="2" y1="20" x2="22" y2="20"></line>
+                            <line x1="12" y1="17" x2="12" y2="20"></line>
+                        </svg>
+                        <span class="menu-text">Inventory & Expenses</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22v-5"></path>
+                            <path d="M17 12v5"></path>
+                            <path d="M7 12v5"></path>
+                            <path d="M2 17v5"></path>
+                            <path d="M22 17v5"></path>
+                            <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"></path>
+                        </svg>
+                        <span class="menu-text">Uisp</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <span class="menu-text">Logs</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h18a2 2 0 0 1 2 2v12zm-3-9l-8 5-8-5"></path>
+                        </svg>
+                        <span class="menu-text">Escalate</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        </svg>
+                        <span class="menu-text">Social Spot/Support</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                        <span class="menu-text">Fix Hotspot</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <span class="menu-text">Fix PPPoE</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                            <line x1="10" y1="11" x2="10" y2="17"></line>
+                            <line x1="14" y1="11" x2="14" y2="17"></line>
+                        </svg>
+                        <span class="menu-text">Recycle Bin</span>
+                        <span class="menu-arrow">&lt;</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content" id="mainContent">
+            <div class="dashboard-container">
+                <h1 class="dashboard-title">Dashboard</h1>
+
+                <!-- SECTION 1 ENCLOSURE: Router View -->
+                <div class="rainbow-enclosure">
+                    <div class="router-section">
+                        <div class="router-header">
+                            <div class="router-header-left">
+                                <svg class="router-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="6" rx="1"></rect>
+                                    <rect x="2" y="9" width="20" height="6" rx="1"></rect>
+                                    <rect x="2" y="16" width="20" height="6" rx="1"></rect>
+                                    <circle cx="6" cy="5" r="1" fill="currentColor"></circle>
+                                    <circle cx="6" cy="12" r="1" fill="currentColor"></circle>
+                                    <circle cx="6" cy="19" r="1" fill="currentColor"></circle>
+                                </svg>
+                                <span>Router View</span>
+                            </div>
+                            <div class="router-header-right">
+                                <select class="router-select">
+                                    <option>All Routers - System Wide</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="router-grid">
+                            <div class="router-card">
+                                <div class="router-name">demo1</div>
+                                <div class="router-stats">
+                                    <span class="stat-dot-green">● 0</span>
+                                    <span class="stat-check">✓ 14</span>
+                                    <span class="stat-cross">× 2</span>
+                                </div>
+                            </div>
+                            <div class="router-card">
+                                <div class="router-name">demo1</div>
+                                <div class="router-stats">
+                                    <span class="stat-dot-green">● 0</span>
+                                    <span class="stat-check">✓ 14</span>
+                                    <span class="stat-cross">× 2</span>
+                                </div>
+                            </div>
+                            <div class="router-card">
+                                <div class="router-name">demo12</div>
+                                <div class="router-stats">
+                                    <span class="stat-dot-green">● 0</span>
+                                    <span class="stat-check">✓ 0</span>
+                                    <span class="stat-cross">× 0</span>
+                                </div>
+                            </div>
+                            <div class="router-card">
+                                <div class="router-name">demo13</div>
+                                <div class="router-stats">
+                                    <span class="stat-dot-green">● 0</span>
+                                    <span class="stat-check">✓ 0</span>
+                                    <span class="stat-cross">× 0</span>
+                                </div>
+                            </div>
+                            <div class="router-card">
+                                <div class="router-name">demo14</div>
+                                <div class="router-stats">
+                                    <span class="stat-dot-green">● 0</span>
+                                    <span class="stat-check">✓ 0</span>
+                                    <span class="stat-cross">× 0</span>
+                                </div>
+                            </div>
+                            <div class="router-card">
+                                <div class="router-name">demo15</div>
+                                <div class="router-stats">
+                                    <span class="stat-dot-green">● 0</span>
+                                    <span class="stat-check">✓ 0</span>
+                                    <span class="stat-cross">× 0</span>
+                                </div>
+                            </div>
+                            <div class="router-card">
+                                <div class="router-name">demo16</div>
+                                <div class="router-stats">
+                                    <span class="stat-dot-green">● 0</span>
+                                    <span class="stat-check">✓ 0</span>
+                                    <span class="stat-cross">× 0</span>
+                                </div>
+                            </div>
+                            <div class="router-card">
+                                <div class="router-name">demo17</div>
+                                <div class="router-stats">
+                                    <span class="stat-dot-green">● 0</span>
+                                    <span class="stat-check">✓ 0</span>
+                                    <span class="stat-cross">× 0</span>
+                                </div>
+                            </div>
+                            <div class="router-card">
+                                <div class="router-name">demo17</div>
+                                <div class="router-stats">
+                                    <span class="stat-dot-green">● 0</span>
+                                    <span class="stat-check">✓ 0</span>
+                                    <span class="stat-cross">× 0</span>
+                                </div>
+                            </div>
+                            <div class="router-card">
+                                <div class="router-name">demo18</div>
+                                <div class="router-stats">
+                                    <span class="stat-dot-green">● 0</span>
+                                    <span class="stat-check">✓ 0</span>
+                                    <span class="stat-cross">× 1</span>
+                                </div>
+                            </div>
+                            <div class="router-card">
+                                <div class="router-name">demo19</div>
+                                <div class="router-stats">
+                                    <span class="stat-dot-green">● 0</span>
+                                    <span class="stat-check">✓ 0</span>
+                                    <span class="stat-cross">× 0</span>
+                                </div>
+                            </div>
+                            <div class="router-card">
+                                <div class="router-name">demo2</div>
+                                <div class="router-stats">
+                                    <span class="stat-dot-green">● 0</span>
+                                    <span class="stat-check">✓ 0</span>
+                                    <span class="stat-cross">× 0</span>
+                                </div>
+                            </div>
+                            <div class="router-card">
+                                <div class="router-name">demo20</div>
+                                <div class="router-stats">
+                                    <span class="stat-dot-green">● 0</span>
+                                    <span class="stat-check">✓ 0</span>
+                                    <span class="stat-cross">× 0</span>
+                                </div>
+                            </div>
+                            <div class="router-card">
+                                <div class="router-name">demo23</div>
+                                <div class="router-stats">
+                                    <span class="stat-dot-green">● 0</span>
+                                    <span class="stat-check">✓ 0</span>
+                                    <span class="stat-cross">× 0</span>
+                                </div>
+                            </div>
+                            <div class="router-card">
+                                <div class="router-name">demo3</div>
+                                <div class="router-stats">
+                                    <span class="stat-dot-green">● 0</span>
+                                    <span class="stat-check">✓ 0</span>
+                                    <span class="stat-cross">× 0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 2 ENCLOSURE: Stats Card Grid -->
+                <div class="rainbow-enclosure">
+                    <div class="stats-grid">
+                        <!-- Card 1 -->
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value">0</div>
+                                <div class="stat-title">INCOME TODAY <span class="eye-icon">👁</span></div>
+                                <a href="#" class="stat-link">View Reports <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6z"></path>
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value">0</div>
+                                <div class="stat-title">INCOME THIS MONTH <span class="eye-icon">👁</span></div>
+                                <a href="#" class="stat-link">View Reports <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value">14/3</div>
+                                <div class="stat-title">ACTIVE/EXPIRED</div>
+                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value">83</div>
+                                <div class="stat-title">TOTAL USERS</div>
+                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value">0</div>
+                                <div class="stat-title">HOTSPOT ONLINE USERS</div>
+                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                                    <line x1="12" y1="20" x2="12.01" y2="20" stroke-width="2"></line>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value">0</div>
+                                <div class="stat-title">PPPOE ONLINE USERS</div>
+                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="18" cy="5" r="3"></circle>
+                                    <circle cx="6" cy="12" r="3"></circle>
+                                    <circle cx="18" cy="19" r="3"></circle>
+                                    <path d="M6 15l12 4"></path>
+                                    <path d="M6 9l12-4"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 7 -->
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value">0</div>
+                                <div class="stat-title">STATIC ONLINE USERS</div>
+                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="12" r="6"></circle>
+                                    <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 8 -->
+                        <div class="stat-card">
+                            <div class="stat-card-left">
+                                <div class="stat-value">0</div>
+                                <div class="stat-title">TOTAL ONLINE USERS</div>
+                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                            </div>
+                            <div class="stat-card-right">
+                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!-- Refresh Action Footer -->
+                <div class="refresh-container">
+                    <button class="refresh-btn">
+                        <svg class="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path>
+                        </svg>
+                        Refresh Online Users
+                    </button>
+                </div>
+
+                <!-- ================= NEW LIVE SECTIONS START ================= -->
+
+                <!-- 1. M-PESA STK PUSH SERVICE (Live Status Bar) -->
+                <div class="live-rainbow-enclosure mpesa-status-bar">
+                    <div class="mpesa-status-content">
+                        <span class="stk-live-dot"></span>
+                        <span class="mpesa-text">M-Pesa STK Push Service — <span class="highlight-green">Live - Safaricom is working</span></span>
+                    </div>
+                </div>
+
+                <!-- 2. ROUTER STATUS SECTION -->
+                <div class="live-rainbow-enclosure">
+                    <div class="router-status-container">
+                        <!-- Header Area -->
+                        <div class="router-status-header">
+                            <div class="header-title">
+                                <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+                                    <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+                                    <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+                                    <rect x="3" y="16" width="7" height="5" rx="1"></rect>
+                                </svg>
+                                <h2>Router Status</h2>
+                            </div>
+                            <div class="header-badges">
+                                <span class="badge badge-green">
+                                    <span class="badge-icon">✓</span> 0 Online
+                                </span>
+                                <span class="badge badge-red">
+                                    <span class="badge-icon">×</span> 15 Offline
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- 2-Column / 3-Column Router Status Grid -->
+                        <div class="router-status-grid">
+                            
+                            <!-- Card 1 -->
+                            <div class="router-status-card">
+                                <div class="card-left">
+                                    <div class="status-circle-offline">×</div>
+                                </div>
+                                <div class="card-center">
+                                    <div class="router-title">demo1</div>
+                                    <div class="router-sub-status">Offline <span class="dot-separator">•</span> Last: Jun 22, 20:59</div>
+                                    <button class="card-refresh-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path></svg>
+                                        Refresh Status
+                                    </button>
+                                </div>
+                                <div class="card-right">RB4011iGS+</div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="router-status-card">
+                                <div class="card-left">
+                                    <div class="status-circle-offline">×</div>
+                                </div>
+                                <div class="card-center">
+                                    <div class="router-title">demo1</div>
+                                    <div class="router-sub-status">Offline <span class="dot-separator">•</span> Last: Jul 11, 06:14</div>
+                                    <button class="card-refresh-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path></svg>
+                                        Refresh Status
+                                    </button>
+                                </div>
+                                <div class="card-right"></div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="router-status-card">
+                                <div class="card-left">
+                                    <div class="status-circle-offline">×</div>
+                                </div>
+                                <div class="card-center">
+                                    <div class="router-title">demo12</div>
+                                    <div class="router-sub-status">Offline <span class="dot-separator">•</span> Last: Jun 22, 20:29</div>
+                                    <button class="card-refresh-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path></svg>
+                                        Refresh Status
+                                    </button>
+                                </div>
+                                <div class="card-right">RB4011iGS+</div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="router-status-card">
+                                <div class="card-left">
+                                    <div class="status-circle-offline">×</div>
+                                </div>
+                                <div class="card-center">
+                                    <div class="router-title">demo13</div>
+                                    <div class="router-sub-status">Offline <span class="dot-separator">•</span> Last: Jun 22, 20:14</div>
+                                    <button class="card-refresh-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path></svg>
+                                        Refresh Status
+                                    </button>
+                                </div>
+                                <div class="card-right">RB4011iGS+</div>
+                            </div>
+
+                            <!-- Card 5 -->
+                            <div class="router-status-card">
+                                <div class="card-left">
+                                    <div class="status-circle-offline">×</div>
+                                </div>
+                                <div class="card-center">
+                                    <div class="router-title">demo14</div>
+                                    <div class="router-sub-status">Offline <span class="dot-separator">•</span> Last: Jun 21, 05:59</div>
+                                    <button class="card-refresh-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path></svg>
+                                        Refresh Status
+                                    </button>
+                                </div>
+                                <div class="card-right">hAP lite</div>
+                            </div>
+
+                            <!-- Card 6 -->
+                            <div class="router-status-card">
+                                <div class="card-left">
+                                    <div class="status-circle-offline">×</div>
+                                </div>
+                                <div class="card-center">
+                                    <div class="router-title">demo15</div>
+                                    <div class="router-sub-status">Offline <span class="dot-separator">•</span> Last: Jun 22, 19:59</div>
+                                    <button class="card-refresh-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path></svg>
+                                        Refresh Status
+                                    </button>
+                                </div>
+                                <div class="card-right">RB951Ui-2HnD</div>
+                            </div>
+
+                            <!-- Card 7 -->
+                            <div class="router-status-card">
+                                <div class="card-left">
+                                    <div class="status-circle-offline">×</div>
+                                </div>
+                                <div class="card-center">
+                                    <div class="router-title">demo16</div>
+                                    <div class="router-sub-status">Offline <span class="dot-separator">•</span> Last: Jun 19, 00:29</div>
+                                    <button class="card-refresh-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path></svg>
+                                        Refresh Status
+                                    </button>
+                                </div>
+                                <div class="card-right"></div>
+                            </div>
+
+                            <!-- Card 8 -->
+                            <div class="router-status-card">
+                                <div class="card-left">
+                                    <div class="status-circle-offline">×</div>
+                                </div>
+                                <div class="card-center">
+                                    <div class="router-title">demo17</div>
+                                    <div class="router-sub-status">Offline <span class="dot-separator">•</span> Last: Jul 04, 11:44</div>
+                                    <button class="card-refresh-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path></svg>
+                                        Refresh Status
+                                    </button>
+                                </div>
+                                <div class="card-right">hAP lite</div>
+                            </div>
+
+                            <!-- Card 9 -->
+                            <div class="router-status-card">
+                                <div class="card-left">
+                                    <div class="status-circle-offline">×</div>
+                                </div>
+                                <div class="card-center">
+                                    <div class="router-title">demo17</div>
+                                    <div class="router-sub-status">Offline <span class="dot-separator">•</span> Last: Jul 04, 11:44</div>
+                                    <button class="card-refresh-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path></svg>
+                                        Refresh Status
+                                    </button>
+                                </div>
+                                <div class="card-right">hAP lite</div>
+                            </div>
+
+                            <!-- Card 10 -->
+                            <div class="router-status-card">
+                                <div class="card-left">
+                                    <div class="status-circle-offline">×</div>
+                                </div>
+                                <div class="card-center">
+                                    <div class="router-title">demo18</div>
+                                    <div class="router-sub-status">Offline <span class="dot-separator">•</span> Last: Jun 27, 15:14</div>
+                                    <button class="card-refresh-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path></svg>
+                                        Refresh Status
+                                    </button>
+                                </div>
+                                <div class="card-right"></div>
+                            </div>
+
+                            <!-- Card 11 -->
+                            <div class="router-status-card">
+                                <div class="card-left">
+                                    <div class="status-circle-offline">×</div>
+                                </div>
+                                <div class="card-center">
+                                    <div class="router-title">demo19</div>
+                                    <div class="router-sub-status">Offline <span class="dot-separator">•</span> Last: Jun 20, 08:14</div>
+                                    <button class="card-refresh-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path></svg>
+                                        Refresh Status
+                                    </button>
+                                </div>
+                                <div class="card-right"></div>
+                            </div>
+
+                            <!-- Card 12 -->
+                            <div class="router-status-card">
+                                <div class="card-left">
+                                    <div class="status-circle-offline">×</div>
+                                </div>
+                                <div class="card-center">
+                                    <div class="router-title">demo2</div>
+                                    <div class="router-sub-status">Offline <span class="dot-separator">•</span> Last: Jun 10, 15:14</div>
+                                    <button class="card-refresh-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path></svg>
+                                        Refresh Status
+                                    </button>
+                                </div>
+                                <div class="card-right"></div>
+                            </div>
+
+                            <!-- Card 13 -->
+                            <div class="router-status-card">
+                                <div class="card-left">
+                                    <div class="status-circle-offline">×</div>
+                                </div>
+                                <div class="card-center">
+                                    <div class="router-title">demo20</div>
+                                    <div class="router-sub-status">Offline <span class="dot-separator">•</span> Last: Jun 22, 05:59</div>
+                                    <button class="card-refresh-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path></svg>
+                                        Refresh Status
+                                    </button>
+                                </div>
+                                <div class="card-right"></div>
+                            </div>
+
+                            <!-- Card 14 -->
+                            <div class="router-status-card">
+                                <div class="card-left">
+                                    <div class="status-circle-offline">×</div>
+                                </div>
+                                <div class="card-center">
+                                    <div class="router-title">demo23</div>
+                                    <div class="router-sub-status">Offline <span class="dot-separator">•</span> Last: Jul 05, 22:59</div>
+                                    <button class="card-refresh-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path></svg>
+                                        Refresh Status
+                                    </button>
+                                </div>
+                                <div class="card-right"></div>
+                            </div>
+
+                            <!-- Card 15 -->
+                            <div class="router-status-card">
+                                <div class="card-left">
+                                    <div class="status-circle-offline">×</div>
+                                </div>
+                                <div class="card-center">
+                                    <div class="router-title">demo3</div>
+                                    <div class="router-sub-status">Offline <span class="dot-separator">•</span> Last: Jun 10, 15:14</div>
+                                    <button class="card-refresh-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path></svg>
+                                        Refresh Status
+                                    </button>
+                                </div>
+                                <div class="card-right"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. MONTHLY REGISTERED CUSTOMERS SECTION -->
+                <div class="live-rainbow-enclosure">
+                    <div class="chart-panel">
+                        <div class="chart-panel-header">
+                            <div class="chart-title">
+                                <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+                                    <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+                                    <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+                                    <rect x="3" y="16" width="7" height="5" rx="1"></rect>
+                                </svg>
+                                <h2>Monthly Registered Customers</h2>
+                            </div>
+                            <div class="chart-actions">
+                                <button class="action-btn minimize-btn">−</button>
+                                <button class="action-btn close-btn">×</button>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <div class="chart-legend">
+                                <span class="legend-color-box members-box"></span> Registered Members
+                            </div>
+                            <div class="vector-chart-container">
+                                <div class="y-axis">
+                                    <span>50</span><span>45</span><span>40</span><span>35</span><span>30</span><span>25</span><span>20</span><span>15</span><span>10</span><span>5</span><span>0</span>
+                                </div>
+                                <div class="chart-graph-wrapper">
+                                    <div class="grid-lines">
+                                        <div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div>
+                                    </div>
+                                    <div class="bars-container">
+                                        <div class="bar-col"><div class="bar-fill" style="height: 0%;"></div><span class="x-label">Jan</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 10%;"></div><span class="x-label">Feb</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 15%;"></div><span class="x-label">Mar</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 22%;"></div><span class="x-label">Apr</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 32%;"></div><span class="x-label">May</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 90%;"></div><span class="x-label">Jun</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 12%;"></div><span class="x-label">Jul</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 0%;"></div><span class="x-label">Aug</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 0%;"></div><span class="x-label">Sep</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 0%;"></div><span class="x-label">Oct</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 0%;"></div><span class="x-label">Nov</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 0%;"></div><span class="x-label">Dec</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. TOTAL MONTHLY SALES SECTION -->
+                <div class="live-rainbow-enclosure">
+                    <div class="chart-panel">
+                        <div class="chart-panel-header">
+                            <div class="chart-title">
+                                <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                                <h2>Total Monthly Sales</h2>
+                            </div>
+                            <div class="chart-actions">
+                                <button class="action-btn minimize-btn">−</button>
+                                <button class="action-btn close-btn">×</button>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <div class="chart-legend">
+                                <span class="legend-color-box sales-box"></span> Monthly Sales
+                            </div>
+                            <div class="vector-chart-container">
+                                <div class="y-axis">
+                                    <span>30,000</span><span>25,000</span><span>20,000</span><span>15,000</span><span>10,000</span><span>5,000</span><span>0</span>
+                                </div>
+                                <div class="chart-graph-wrapper">
+                                    <div class="grid-lines">
+                                        <div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div>
+                                    </div>
+                                    <div class="bars-container blue-purple-bars">
+                                        <div class="bar-col"><div class="bar-fill" style="height: 1%;"></div><span class="x-label">Jan</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 92%;"></div><span class="x-label">Feb</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 0%;"></div><span class="x-label">Mar</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 18%;"></div><span class="x-label">Apr</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 48%;"></div><span class="x-label">May</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 0%;"></div><span class="x-label">Jun</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 2%;"></div><span class="x-label">Jul</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 0%;"></div><span class="x-label">Aug</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 0%;"></div><span class="x-label">Sep</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 0%;"></div><span class="x-label">Oct</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 0%;"></div><span class="x-label">Nov</span></div>
+                                        <div class="bar-col"><div class="bar-fill" style="height: 0%;"></div><span class="x-label">Dec</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ================= NEW LIVE SECTIONS START ================= -->
+
+                <!-- 1. TODAY'S DATA USAGE -->
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Today's Data Usage</h2>
+                    </div>
+                    <div class="usage-stats-content">
+                        <!-- Custom Legend -->
+                        <div class="mini-chart-legend">
+                            <span class="legend-pill upload-pill"></span> Upload
+                            <span class="legend-pill download-pill" style="margin-left: 15px;"></span> Download
+                        </div>
+                        <div class="usage-metrics-list">
+                            <p><strong>Upload:</strong> 0 B</p>
+                            <p><strong>Download:</strong> 0 B</p>
+                            <p><strong>Total:</strong> 0 B</p>
+                            <p><strong>Date:</strong> 2026-07-15</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. WEEKLY DATA USAGE -->
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Weekly Data Usage</h2>
+                        <div class="mini-chart-legend">
+                            <span class="legend-pill upload-pill"></span> Upload
+                            <span class="legend-pill download-pill" style="margin-left: 15px;"></span> Download
+                        </div>
+                    </div>
+                    
+                    <!-- 70px Fixed Height Scrollable Chart Area -->
+                    <div class="scrollable-chart-area">
+                        <div class="chart-scroll-content">
+                            <!-- Y-Axis (30px gap spacing) -->
+                            <div class="chart-y-axis">
+                                <span>0 B</span>
+                                <span>204.8 undefined</span>
+                                <span>409.6 undefined</span>
+                                <span>614.4 undefined</span>
+                                <span>819.2 undefined</span>
+                                <span>1 B</span>
+                            </div>
+                            
+                            <!-- Main Graph Canvas -->
+                            <div class="chart-canvas-container">
+                                <div class="chart-bars-scroll-row">
+                                    <div class="chart-bar-col">
+                                        <div class="dual-bars"><div class="bar-upload" style="height: 0px;"></div><div class="bar-download" style="height: 0px;"></div></div>
+                                        <span class="x-axis-label">Monday</span>
+                                    </div>
+                                    <div class="chart-bar-col">
+                                        <div class="dual-bars"><div class="bar-upload" style="height: 0px;"></div><div class="bar-download" style="height: 0px;"></div></div>
+                                        <span class="x-axis-label">Tuesday</span>
+                                    </div>
+                                    <div class="chart-bar-col">
+                                        <div class="dual-bars"><div class="bar-upload" style="height: 0px;"></div><div class="bar-download" style="height: 0px;"></div></div>
+                                        <span class="x-axis-label">Wednesday</span>
+                                    </div>
+                                    <div class="chart-bar-col">
+                                        <div class="dual-bars"><div class="bar-upload" style="height: 0px;"></div><div class="bar-download" style="height: 0px;"></div></div>
+                                        <span class="x-axis-label">Thursday</span>
+                                    </div>
+                                    <div class="chart-bar-col">
+                                        <div class="dual-bars"><div class="bar-upload" style="height: 0px;"></div><div class="bar-download" style="height: 0px;"></div></div>
+                                        <span class="x-axis-label">Friday</span>
+                                    </div>
+                                    <div class="chart-bar-col">
+                                        <div class="dual-bars"><div class="bar-upload" style="height: 0px;"></div><div class="bar-download" style="height: 0px;"></div></div>
+                                        <span class="x-axis-label">Saturday</span>
+                                    </div>
+                                    <div class="chart-bar-col">
+                                        <div class="dual-bars"><div class="bar-upload" style="height: 0px;"></div><div class="bar-download" style="height: 0px;"></div></div>
+                                        <span class="x-axis-label">Sunday</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. MONTHLY DATA USAGE -->
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Monthly Data Usage</h2>
+                        <div class="mini-chart-legend">
+                            <span class="legend-pill upload-pill"></span> Upload
+                            <span class="legend-pill download-pill" style="margin-left: 15px;"></span> Download
+                        </div>
+                    </div>
+
+                    <!-- 70px Fixed Height Scrollable Chart Area -->
+                    <div class="scrollable-chart-area">
+                        <div class="chart-scroll-content">
+                            <!-- Y-Axis (30px gap spacing) -->
+                            <div class="chart-y-axis">
+                                <span>0 B</span>
+                                <span>488.28 KB</span>
+                                <span>976.56 KB</span>
+                                <span>1.43 MB</span>
+                                <span>1.91 MB</span>
+                                <span>2.38 MB</span>
+                                <span>2.86 MB</span>
+                                <span>3.34 MB</span>
+                            </div>
+
+                            <!-- Main Graph Canvas -->
+                            <div class="chart-canvas-container">
+                                <div class="chart-bars-scroll-row">
+                                    <div class="chart-bar-col"><div class="dual-bars"><div class="bar-upload" style="height:0px;"></div><div class="bar-download" style="height:0px;"></div></div><span class="x-axis-label">Jan</span></div>
+                                    <div class="chart-bar-col"><div class="dual-bars"><div class="bar-upload" style="height:0px;"></div><div class="bar-download" style="height:0px;"></div></div><span class="x-axis-label">Feb</span></div>
+                                    <div class="chart-bar-col"><div class="dual-bars"><div class="bar-upload" style="height:0px;"></div><div class="bar-download" style="height:0px;"></div></div><span class="x-axis-label">Mar</span></div>
+                                    <div class="chart-bar-col"><div class="dual-bars"><div class="bar-upload" style="height:0px;"></div><div class="bar-download" style="height:0px;"></div></div><span class="x-axis-label">Apr</span></div>
+                                    <div class="chart-bar-col"><div class="dual-bars"><div class="bar-upload" style="height:0px;"></div><div class="bar-download" style="height:0px;"></div></div><span class="x-axis-label">May</span></div>
+                                    <div class="chart-bar-col"><div class="dual-bars"><div class="bar-upload" style="height:40px;"></div><div class="bar-download" style="height:120px;"></div></div><span class="x-axis-label">Jun</span></div>
+                                    <div class="chart-bar-col"><div class="dual-bars"><div class="bar-upload" style="height:0px;"></div><div class="bar-download" style="height:0px;"></div></div><span class="x-axis-label">Jul</span></div>
+                                    <div class="chart-bar-col"><div class="dual-bars"><div class="bar-upload" style="height:0px;"></div><div class="bar-download" style="height:0px;"></div></div><span class="x-axis-label">Aug</span></div>
+                                    <div class="chart-bar-col"><div class="dual-bars"><div class="bar-upload" style="height:0px;"></div><div class="bar-download" style="height:0px;"></div></div><span class="x-axis-label">Sep</span></div>
+                                    <div class="chart-bar-col"><div class="dual-bars"><div class="bar-upload" style="height:0px;"></div><div class="bar-download" style="height:0px;"></div></div><span class="x-axis-label">Oct</span></div>
+                                    <div class="chart-bar-col"><div class="dual-bars"><div class="bar-upload" style="height:0px;"></div><div class="bar-download" style="height:0px;"></div></div><span class="x-axis-label">Nov</span></div>
+                                    <div class="chart-bar-col"><div class="dual-bars"><div class="bar-upload" style="height:0px;"></div><div class="bar-download" style="height:0px;"></div></div><span class="x-axis-label">Dec</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. VOUCHERS STOCK -->
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Vouchers Stock</h2>
+                    </div>
+                    <table class="vouchers-table">
+                        <thead>
+                            <tr>
+                                <th>PLAN NAME</th>
+                                <th>UNUSED</th>
+                                <th>USED</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PPPOE1</td>
+                                <td class="highlight-cyan">5</td>
+                                <td>0</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td>Total</td>
+                                <td class="highlight-cyan">5</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 5. CUSTOMERS GROWTH -->
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <div class="header-title-flex">
+                            <svg class="chart-growth-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3v18h18M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path>
+                            </svg>
+                            <h2>Customers Growth</h2>
+                        </div>
+                    </div>
+
+                    <!-- 70px Fixed Height Scrollable Chart Area -->
+                    <div class="scrollable-chart-area">
+                        <div class="chart-scroll-content">
+                            <!-- Y-Axis (30px gap spacing) -->
+                            <div class="chart-y-axis">
+                                <span>0</span><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>60</span><span>70</span><span>80</span><span>90</span>
+                            </div>
+
+                            <!-- Main Graph Canvas for Curves/Splines -->
+                            <div class="chart-canvas-container">
+                                <div class="chart-bars-scroll-row">
+                                    <div class="chart-bar-col"><div class="growth-dot-wrapper"><span class="dot-node" style="bottom: 10px;"></span></div><span class="x-axis-label">Jan</span></div>
+                                    <div class="chart-bar-col"><div class="growth-dot-wrapper"><span class="dot-node" style="bottom: 30px;"></span></div><span class="x-axis-label">Feb</span></div>
+                                    <div class="chart-bar-col"><div class="growth-dot-wrapper"><span class="dot-node" style="bottom: 50px;"></span></div><span class="x-axis-label">Mar</span></div>
+                                    <div class="chart-bar-col"><div class="growth-dot-wrapper"><span class="dot-node" style="bottom: 85px;"></span></div><span class="x-axis-label">Apr</span></div>
+                                    <div class="chart-bar-col"><div class="growth-dot-wrapper"><span class="dot-node" style="bottom: 230px;"></span></div><span class="x-axis-label">May</span></div>
+                                    <div class="chart-bar-col"><div class="growth-dot-wrapper"><span class="dot-node" style="bottom: 240px;"></span></div><span class="x-axis-label">Jun</span></div>
+                                    <div class="chart-bar-col"><div class="growth-dot-wrapper"><span class="dot-node" style="bottom: 240px;"></span></div><span class="x-axis-label">Jul</span></div>
+                                    <div class="chart-bar-col"><div class="growth-dot-wrapper"><span class="dot-node" style="bottom: 240px;"></span></div><span class="x-axis-label">Aug</span></div>
+                                    <div class="chart-bar-col"><div class="growth-dot-wrapper"><span class="dot-node" style="bottom: 240px;"></span></div><span class="x-axis-label">Sep</span></div>
+                                    <div class="chart-bar-col"><div class="growth-dot-wrapper"><span class="dot-node" style="bottom: 240px;"></span></div><span class="x-axis-label">Oct</span></div>
+                                    <div class="chart-bar-col"><div class="growth-dot-wrapper"><span class="dot-node" style="bottom: 240px;"></span></div><span class="x-axis-label">Nov</span></div>
+                                    <div class="chart-bar-col"><div class="growth-dot-wrapper"><span class="dot-node" style="bottom: 240px;"></span></div><span class="x-axis-label">Dec</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= NEW LIVE SECTIONS END ================= -->
+
+            </div>
+        </main>
+    </div>
+<!-- ================= EXTRA LIVE SECTIONS START ================= -->
+
+                <!-- 1. USERS EXPIRING TODAY -->
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Users Expiring Today</h2>
+                    </div>
+                    <!-- Scrollable table wrapper -->
+                    <div class="scrollable-table-wrapper">
+                        <table class="equal-cols-table three-cols">
+                            <thead>
+                                <tr>
+                                    <th>USERNAME</th>
+                                    <th>CREATED ON</th>
+                                    <th>EXPIRES ON</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="user-link">FT-6A:5A:29:82:6C:96</span></td>
+                                    <td>2026-06-15 20:01</td>
+                                    <td>2026-07-15 23:59</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="user-link">M770</span></td>
+                                    <td>2026-06-15 20:01</td>
+                                    <td>2026-07-15 23:59</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="user-link">M774</span></td>
+                                    <td>2026-06-15 20:01</td>
+                                    <td>2026-07-15 23:59</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="user-link">FT-DE:37:98:9D:70:67</span></td>
+                                    <td>2026-06-15 20:01</td>
+                                    <td>2026-07-15 23:59</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="user-link">Mwaruwa</span></td>
+                                    <td>2026-06-15 20:01</td>
+                                    <td>2026-07-15 23:59</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="user-link">FT-5A:76:67:CA:C3:8B</span></td>
+                                    <td>2026-06-15 20:01</td>
+                                    <td>2026-07-15 23:59</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="user-link">M782</span></td>
+                                    <td>2026-06-15 20:01</td>
+                                    <td>2026-07-15 23:59</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="user-link">M783</span></td>
+                                    <td>2026-06-15 20:01</td>
+                                    <td>2026-07-15 23:59</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="user-link">M784</span></td>
+                                    <td>2026-06-15 20:01</td>
+                                    <td>2026-07-15 23:59</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="user-link">FT-56:C8:7D:ED:AC:95</span></td>
+                                    <td>2026-06-15 20:01</td>
+                                    <td>2026-07-15 23:59</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Pagination Controls -->
+                    <div class="table-pagination">
+                        <span class="pag-btn active">1</span>
+                        <span class="pag-btn">2</span>
+                        <span class="pag-btn">Next</span>
+                        <span class="pag-btn">Last</span>
+                    </div>
+                </div>
+
+                <!-- 2. PAYMENT GATEWAY: OWNMpesaDETAILS -->
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <h2>Payment Gateway: OwnMpesaDetails</h2>
+                    </div>
+                    <div class="mpesa-gateway-content">
+                        <div class="mpesa-status-content">
+                            <span class="stk-live-dot"></span> 
+                            <span>MPesa STK Engine: <span class="highlight-green">ONLINE</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. ALL USERS INSIGHTS (Exact 80x80 Pie Chart) -->
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple" style="justify-content: center;">
+                        <h2>All Users Insights</h2>
+                    </div>
+                    <div class="pie-chart-section-wrapper">
+                        <!-- Precise 80px by 80px CSS Conic Gradient Pie Chart -->
+                        <div class="insights-pie-chart"></div>
+                        
+                        <div class="pie-chart-legend">
+                            <span class="legend-item"><span class="legend-color active-color"></span> Active Users</span>
+                            <span class="legend-item"><span class="legend-color expired-color"></span> Expired Users</span>
+                            <span class="legend-item"><span class="legend-color inactive-color"></span> Inactive Users</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. BEST SELLING PACKAGES PER MONTH -->
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <div class="header-title-flex">
+                            <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                            <h2>Best Selling Packages Per Month</h2>
+                        </div>
+                    </div>
+                    <div class="scrollable-table-wrapper">
+                        <table class="equal-cols-table four-cols">
+                            <thead>
+                                <tr>
+                                    <th>PACKAGE</th>
+                                    <th>PRICE</th>
+                                    <th>SALES</th>
+                                    <th>REVENUE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Insert package rows here -->
+                                <tr>
+                                    <td>Premium Unlimited</td>
+                                    <td>1,500 KES</td>
+                                    <td>45</td>
+                                    <td class="highlight-cyan">67,500 KES</td>
+                                </tr>
+                                <tr>
+                                    <td>Super Speed 10Mbps</td>
+                                    <td>1,000 KES</td>
+                                    <td>32</td>
+                                    <td class="highlight-cyan">32,000 KES</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 5. TRANSACTIONS PER ROUTER -->
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <div class="header-title-flex">
+                            <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                            </svg>
+                            <h2>Transactions per Router</h2>
+                        </div>
+                    </div>
+                    <div class="scrollable-table-wrapper">
+                        <table class="equal-cols-table four-cols">
+                            <thead>
+                                <tr>
+                                    <th>ROUTER</th>
+                                    <th>TRANSACTIONS</th>
+                                    <th>PERCENTAGE</th>
+                                    <th>AMOUNT</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>demo1</td>
+                                    <td>16</td>
+                                    <td>94.12%</td>
+                                    <td class="highlight-cyan">32.00</td>
+                                </tr>
+                                <tr>
+                                    <td>demo18</td>
+                                    <td>1</td>
+                                    <td>5.88%</td>
+                                    <td class="highlight-cyan">6.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 6. LAST 5 TRANSACTIONS -->
+                <div class="live-rainbow-enclosure">
+                    <div class="panel-header-simple">
+                        <div class="header-title-flex">
+                            <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                <line x1="1" y1="10" x2="23" y2="10"></line>
+                            </svg>
+                            <h2>Last 5 Transactions</h2>
+                        </div>
+                    </div>
+                    <div class="scrollable-table-wrapper">
+                        <table class="equal-cols-table three-cols">
+                            <thead>
+                                <tr>
+                                    <th>USERNAME</th>
+                                    <th>AMOUNT</th>
+                                    <th>DATE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="user-link">unknown nonexistent_user_abc</span></td>
+                                    <td class="highlight-cyan">500</td>
+                                    <td>2026-07-11</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="user-link">unknown nonexistent_user_xyz789</span></td>
+                                    <td class="highlight-cyan">1</td>
+                                    <td>2026-07-11</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="user-link">FT-06:77:79:87:B2:42</span></td>
+                                    <td class="highlight-cyan">0.009</td>
+                                    <td>2026-07-06</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="user-link">Mathew</span></td>
+                                    <td class="highlight-cyan">6</td>
+                                    <td>2026-06-20</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="user-link">tori1</span></td>
+                                    <td class="highlight-cyan">2</td>
+                                    <td>2026-06-01</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ================= EXTRA LIVE SECTIONS END ================= -->
+    <!-- Footer Section -->
+    <footer class="admin-footer">
+        <div class="footer-content">
+            <p class="copyright">&copy; 2026 COBU-TECH INDUSTRIES NETWORKING. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="administration.js"></script>
+</body>
+</html>
