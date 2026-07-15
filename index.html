@@ -39,11 +39,11 @@
                 <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
             </svg>
             <div class="admin-profile-circle">
-                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=80&q=80" alt="Admin Profile">
+                <img id="admin-profile-pic" src="" alt="Admin Profile">
             </div>
             <div class="admin-meta-row">
-                <div class="admin-name-glow"><div class="admin-name-box">Admin</div></div>
-                <div class="admin-status-glow"><div class="admin-status-dot"></div></div>
+                <div class="admin-name-glow"><div class="admin-name-box" id="admin-name"></div></div>
+                <div class="admin-status-glow"><div class="admin-status-dot" id="admin-status"></div></div>
             </div>
         </div>
     </header>
@@ -395,304 +395,187 @@
                 </nav>
             </div>
         </aside>
+<!-- Main Content Area -->
+<main class="main-content" id="mainContent">
+    <div class="dashboard-container">
+        <h1 class="dashboard-title">Dashboard</h1>
 
-        <!-- Main Content Area -->
-        <main class="main-content" id="mainContent">
-            <div class="dashboard-container">
-                <h1 class="dashboard-title">Dashboard</h1>
-
-                <!-- SECTION 1 ENCLOSURE: Router View -->
-                <div class="rainbow-enclosure">
-                    <div class="router-section">
-                        <div class="router-header">
-                            <div class="router-header-left">
-                                <svg class="router-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="2" y="2" width="20" height="6" rx="1"></rect>
-                                    <rect x="2" y="9" width="20" height="6" rx="1"></rect>
-                                    <rect x="2" y="16" width="20" height="6" rx="1"></rect>
-                                    <circle cx="6" cy="5" r="1" fill="currentColor"></circle>
-                                    <circle cx="6" cy="12" r="1" fill="currentColor"></circle>
-                                    <circle cx="6" cy="19" r="1" fill="currentColor"></circle>
-                                </svg>
-                                <span>Router View</span>
-                            </div>
-                            <div class="router-header-right">
-                                <select class="router-select">
-                                    <option>All Routers - System Wide</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="router-grid">
-                            <div class="router-card">
-                                <div class="router-name">demo1</div>
-                                <div class="router-stats">
-                                    <span class="stat-dot-green">● 0</span>
-                                    <span class="stat-check">✓ 14</span>
-                                    <span class="stat-cross">× 2</span>
-                                </div>
-                            </div>
-                            <div class="router-card">
-                                <div class="router-name">demo1</div>
-                                <div class="router-stats">
-                                    <span class="stat-dot-green">● 0</span>
-                                    <span class="stat-check">✓ 14</span>
-                                    <span class="stat-cross">× 2</span>
-                                </div>
-                            </div>
-                            <div class="router-card">
-                                <div class="router-name">demo12</div>
-                                <div class="router-stats">
-                                    <span class="stat-dot-green">● 0</span>
-                                    <span class="stat-check">✓ 0</span>
-                                    <span class="stat-cross">× 0</span>
-                                </div>
-                            </div>
-                            <div class="router-card">
-                                <div class="router-name">demo13</div>
-                                <div class="router-stats">
-                                    <span class="stat-dot-green">● 0</span>
-                                    <span class="stat-check">✓ 0</span>
-                                    <span class="stat-cross">× 0</span>
-                                </div>
-                            </div>
-                            <div class="router-card">
-                                <div class="router-name">demo14</div>
-                                <div class="router-stats">
-                                    <span class="stat-dot-green">● 0</span>
-                                    <span class="stat-check">✓ 0</span>
-                                    <span class="stat-cross">× 0</span>
-                                </div>
-                            </div>
-                            <div class="router-card">
-                                <div class="router-name">demo15</div>
-                                <div class="router-stats">
-                                    <span class="stat-dot-green">● 0</span>
-                                    <span class="stat-check">✓ 0</span>
-                                    <span class="stat-cross">× 0</span>
-                                </div>
-                            </div>
-                            <div class="router-card">
-                                <div class="router-name">demo16</div>
-                                <div class="router-stats">
-                                    <span class="stat-dot-green">● 0</span>
-                                    <span class="stat-check">✓ 0</span>
-                                    <span class="stat-cross">× 0</span>
-                                </div>
-                            </div>
-                            <div class="router-card">
-                                <div class="router-name">demo17</div>
-                                <div class="router-stats">
-                                    <span class="stat-dot-green">● 0</span>
-                                    <span class="stat-check">✓ 0</span>
-                                    <span class="stat-cross">× 0</span>
-                                </div>
-                            </div>
-                            <div class="router-card">
-                                <div class="router-name">demo17</div>
-                                <div class="router-stats">
-                                    <span class="stat-dot-green">● 0</span>
-                                    <span class="stat-check">✓ 0</span>
-                                    <span class="stat-cross">× 0</span>
-                                </div>
-                            </div>
-                            <div class="router-card">
-                                <div class="router-name">demo18</div>
-                                <div class="router-stats">
-                                    <span class="stat-dot-green">● 0</span>
-                                    <span class="stat-check">✓ 0</span>
-                                    <span class="stat-cross">× 1</span>
-                                </div>
-                            </div>
-                            <div class="router-card">
-                                <div class="router-name">demo19</div>
-                                <div class="router-stats">
-                                    <span class="stat-dot-green">● 0</span>
-                                    <span class="stat-check">✓ 0</span>
-                                    <span class="stat-cross">× 0</span>
-                                </div>
-                            </div>
-                            <div class="router-card">
-                                <div class="router-name">demo2</div>
-                                <div class="router-stats">
-                                    <span class="stat-dot-green">● 0</span>
-                                    <span class="stat-check">✓ 0</span>
-                                    <span class="stat-cross">× 0</span>
-                                </div>
-                            </div>
-                            <div class="router-card">
-                                <div class="router-name">demo20</div>
-                                <div class="router-stats">
-                                    <span class="stat-dot-green">● 0</span>
-                                    <span class="stat-check">✓ 0</span>
-                                    <span class="stat-cross">× 0</span>
-                                </div>
-                            </div>
-                            <div class="router-card">
-                                <div class="router-name">demo23</div>
-                                <div class="router-stats">
-                                    <span class="stat-dot-green">● 0</span>
-                                    <span class="stat-check">✓ 0</span>
-                                    <span class="stat-cross">× 0</span>
-                                </div>
-                            </div>
-                            <div class="router-card">
-                                <div class="router-name">demo3</div>
-                                <div class="router-stats">
-                                    <span class="stat-dot-green">● 0</span>
-                                    <span class="stat-check">✓ 0</span>
-                                    <span class="stat-cross">× 0</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SECTION 2 ENCLOSURE: Stats Card Grid -->
-                <div class="rainbow-enclosure">
-                    <div class="stats-grid">
-                        <!-- Card 1 -->
-                        <div class="stat-card">
-                            <div class="stat-card-left">
-                                <div class="stat-value">0</div>
-                                <div class="stat-title">INCOME TODAY <span class="eye-icon">👁</span></div>
-                                <a href="#" class="stat-link">View Reports <span class="arrow-icon">→</span></a>
-                            </div>
-                            <div class="stat-card-right">
-                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6z"></path>
-                                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                                    <path d="M16 10a4 4 0 0 1-8 0"></path>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div class="stat-card">
-                            <div class="stat-card-left">
-                                <div class="stat-value">0</div>
-                                <div class="stat-title">INCOME THIS MONTH <span class="eye-icon">👁</span></div>
-                                <a href="#" class="stat-link">View Reports <span class="arrow-icon">→</span></a>
-                            </div>
-                            <div class="stat-card-right">
-                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <line x1="18" y1="20" x2="18" y2="10"></line>
-                                    <line x1="12" y1="20" x2="12" y2="4"></line>
-                                    <line x1="6" y1="20" x2="6" y2="14"></line>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="stat-card">
-                            <div class="stat-card-left">
-                                <div class="stat-value">14/3</div>
-                                <div class="stat-title">ACTIVE/EXPIRED</div>
-                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
-                            </div>
-                            <div class="stat-card-right">
-                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <!-- Card 4 -->
-                        <div class="stat-card">
-                            <div class="stat-card-left">
-                                <div class="stat-value">83</div>
-                                <div class="stat-title">TOTAL USERS</div>
-                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
-                            </div>
-                            <div class="stat-card-right">
-                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <!-- Card 5 -->
-                        <div class="stat-card">
-                            <div class="stat-card-left">
-                                <div class="stat-value">0</div>
-                                <div class="stat-title">HOTSPOT ONLINE USERS</div>
-                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
-                            </div>
-                            <div class="stat-card-right">
-                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                                    <line x1="12" y1="20" x2="12.01" y2="20" stroke-width="2"></line>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <!-- Card 6 -->
-                        <div class="stat-card">
-                            <div class="stat-card-left">
-                                <div class="stat-value">0</div>
-                                <div class="stat-title">PPPOE ONLINE USERS</div>
-                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
-                            </div>
-                            <div class="stat-card-right">
-                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <circle cx="18" cy="5" r="3"></circle>
-                                    <circle cx="6" cy="12" r="3"></circle>
-                                    <circle cx="18" cy="19" r="3"></circle>
-                                    <path d="M6 15l12 4"></path>
-                                    <path d="M6 9l12-4"></path>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <!-- Card 7 -->
-                        <div class="stat-card">
-                            <div class="stat-card-left">
-                                <div class="stat-value">0</div>
-                                <div class="stat-title">STATIC ONLINE USERS</div>
-                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
-                            </div>
-                            <div class="stat-card-right">
-                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <circle cx="12" cy="12" r="6"></circle>
-                                    <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <!-- Card 8 -->
-                        <div class="stat-card">
-                            <div class="stat-card-left">
-                                <div class="stat-value">0</div>
-                                <div class="stat-title">TOTAL ONLINE USERS</div>
-                                <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
-                            </div>
-                            <div class="stat-card-right">
-                                <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-<!-- Refresh Action Footer -->
-                <div class="refresh-container">
-                    <button class="refresh-btn">
-                        <svg class="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path>
+        <!-- SECTION 1 ENCLOSURE: Router View -->
+        <div class="rainbow-enclosure">
+            <div class="router-section">
+                <div class="router-header">
+                    <div class="router-header-left">
+                        <svg class="router-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="6" rx="1"></rect>
+                            <rect x="2" y="9" width="20" height="6" rx="1"></rect>
+                            <rect x="2" y="16" width="20" height="6" rx="1"></rect>
+                            <circle cx="6" cy="5" r="1" fill="currentColor"></circle>
+                            <circle cx="6" cy="12" r="1" fill="currentColor"></circle>
+                            <circle cx="6" cy="19" r="1" fill="currentColor"></circle>
                         </svg>
-                        Refresh Online Users
-                    </button>
+                        <span>Router View</span>
+                    </div>
+                    <div class="router-header-right">
+                        <select class="router-select" id="router-selector">
+                            <option value="all">All Routers - System Wide</option>
+                        </select>
+                    </div>
                 </div>
+                
+                <!-- Dynamic Router Cards injected here -->
+                <div class="router-grid" id="router-grid-container"></div>
+            </div>
+        </div>
+
+        <!-- SECTION 2 ENCLOSURE: Stats Card Grid -->
+        <div class="rainbow-enclosure">
+            <div class="stats-grid">
+                <!-- Card 1: Income Today -->
+                <div class="stat-card">
+                    <div class="stat-card-left">
+                        <div class="stat-value" id="stat-income-today">0</div>
+                        <div class="stat-title">INCOME TODAY <span class="eye-icon">👁</span></div>
+                        <a href="#" class="stat-link">View Reports <span class="arrow-icon">→</span></a>
+                    </div>
+                    <div class="stat-card-right">
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 2: Income Month -->
+                <div class="stat-card">
+                    <div class="stat-card-left">
+                        <div class="stat-value" id="stat-income-month">0</div>
+                        <div class="stat-title">INCOME THIS MONTH <span class="eye-icon">👁</span></div>
+                        <a href="#" class="stat-link">View Reports <span class="arrow-icon">→</span></a>
+                    </div>
+                    <div class="stat-card-right">
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 3: Active/Expired -->
+                <div class="stat-card">
+                    <div class="stat-card-left">
+                        <div class="stat-value" id="stat-active-expired">0/0</div>
+                        <div class="stat-title">ACTIVE/EXPIRED</div>
+                        <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                    </div>
+                    <div class="stat-card-right">
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 4: Total Users -->
+                <div class="stat-card">
+                    <div class="stat-card-left">
+                        <div class="stat-value" id="stat-total-users">0</div>
+                        <div class="stat-title">TOTAL USERS</div>
+                        <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                    </div>
+                    <div class="stat-card-right">
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 5: Hotspot Online -->
+                <div class="stat-card">
+                    <div class="stat-card-left">
+                        <div class="stat-value" id="stat-hotspot-online">0</div>
+                        <div class="stat-title">HOTSPOT ONLINE USERS</div>
+                        <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                    </div>
+                    <div class="stat-card-right">
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                            <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                            <line x1="12" y1="20" x2="12.01" y2="20" stroke-width="2"></line>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 6: PPPoE Online -->
+                <div class="stat-card">
+                    <div class="stat-card-left">
+                        <div class="stat-value" id="stat-pppoe-online">0</div>
+                        <div class="stat-title">PPPOE ONLINE USERS</div>
+                        <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                    </div>
+                    <div class="stat-card-right">
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="18" cy="5" r="3"></circle>
+                            <circle cx="6" cy="12" r="3"></circle>
+                            <circle cx="18" cy="19" r="3"></circle>
+                            <path d="M6 15l12 4"></path>
+                            <path d="M6 9l12-4"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 7: Static Online -->
+                <div class="stat-card">
+                    <div class="stat-card-left">
+                        <div class="stat-value" id="stat-static-online">0</div>
+                        <div class="stat-title">STATIC ONLINE USERS</div>
+                        <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                    </div>
+                    <div class="stat-card-right">
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 8: Total Online -->
+                <div class="stat-card">
+                    <div class="stat-card-left">
+                        <div class="stat-value" id="stat-total-online">0</div>
+                        <div class="stat-title">TOTAL ONLINE USERS</div>
+                        <a href="#" class="stat-link">View All <span class="arrow-icon">→</span></a>
+                    </div>
+                    <div class="stat-card-right">
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Refresh Action Footer -->
+        <div class="refresh-container">
+            <button class="refresh-btn" id="refresh-users-btn">
+                <svg class="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-2.19"></path>
+                </svg>
+                Refresh Online Users
+            </button>
+        </div>
+    </div>
+</main>
+
 
                 <!-- ================= NEW LIVE SECTIONS START ================= -->
 
