@@ -1659,3 +1659,91 @@ body {
     gap: 6px;
     font-size: 0.9rem;
 }
+.sidebar-menu .menu-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.sidebar-menu .menu-item:hover,
+.sidebar-menu .menu-item.active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-menu .menu-item .menu-text {
+    flex-grow: 1;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.sidebar-menu .menu-arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    margin-left: 8px;
+}
+
+.sidebar-menu .menu-item.open .menu-arrow {
+    transform: rotate(-90deg);
+}
+
+.star-icon {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s ease, fill 0.3s ease;
+    flex-shrink: 0;
+}
+
+.star-icon:hover {
+    color: #f39c12;
+}
+
+.star-icon.active {
+    color: #f39c12;
+    fill: #f39c12;
+}
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 5px 0;
+}
+
+.submenu.show {
+    display: flex;
+}
+
+.submenu-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px 8px 45px;
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 13px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.submenu-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.submenu-item .menu-text {
+    flex-grow: 1;
+}
+
+.nested-submenu {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.nested-submenu .submenu-item {
+    padding-left: 60px;
+}
