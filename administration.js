@@ -935,6 +935,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!IS_DATA_PAGE) {
     initRouterViewCarousel();
     initRouterStatusCarousel();
+    initWindowControls();
     initBarCharts();
     initDataUsageCharts();
     initGrowthLineChart();
@@ -1060,7 +1061,7 @@ function initRouterStatusCarousel() {
     { name:'AR-North',    status:'offline', last:'2025-07-15 18:45',   ip:'172.16.0.5' },
   ];
 
-  const PAGE = 6;
+  const PAGE = 10;
   let pageIdx = 0;
   const total = () => Math.ceil(statuses.length / PAGE);
 
@@ -1103,6 +1104,78 @@ function initRouterStatusCarousel() {
   document.getElementById('rs-next-btn')?.addEventListener('click', () => { if (pageIdx<total()-1){pageIdx++; render();} });
   document.getElementById('rs-last-btn')?.addEventListener('click', () => { pageIdx=total()-1; render(); });
   render();
+}
+
+/* ══════════════════════════════════════════════════════
+   WINDOW CONTROLS — minimize [-] and close [x]
+   Applies to ALL dashboard sections EXCEPT M-Pesa STK Push
+   ══════════════════════════════════════════════════════ */
+function initWindowControls() {
+  const sections = document.querySelectorAll('.rainbow-enclosure, .live-rainbow-enclosure');
+  sections.forEach(section => {
+    // Skip M-Pesa STK Push Service section
+    if (section.classList.contains('mpesa-status-bar')) return;
+
+    // Locate the section's header element
+    let header = section.querySelector(
+      '.chart-panel-header, .panel-header-simple, .router-status-header, .router-view-header'
+    );
+    // Router View: header is nested inside .router-view-outer
+    if (!header && section.querySelector('.router-view-outer')) {
+      header = section.querySelector('.router-view-outer .router-view-header');
+    }
+    if (!header) return;
+
+    // Inject window control buttons if not already present
+    let actions = header.querySelector('.win-controls');
+    if (!actions) {
+      // If the header already has a .chart-actions div (the two existing chart sections),
+      // reuse it and tag its buttons; otherwise inject a new one.
+      const existing = header.querySelector('.chart-actions');
+      if (existing) {
+        const btns = existing.querySelectorAll('.action-btn');
+        if (btns[0]) btns[0].classList.add('win-minimize');
+        if (btns[1]) btns[1].classList.add('win-close');
+        existing.classList.add('win-controls');
+        actions = existing;
+      } else {
+        actions = document.createElement('div');
+        actions.className = 'chart-actions win-controls';
+        actions.innerHTML =
+          '<button class="action-btn win-minimize" title="Minimize">−</button>' +
+          '<button class="action-btn win-close"    title="Close">×</button>';
+        header.appendChild(actions);
+      }
+    }
+
+    // Determine which elements constitute the "body" to hide on minimize
+    const getBodyEls = () => {
+      const isRouterView = !!section.querySelector('.router-view-outer');
+      if (isRouterView) {
+        const outer = section.querySelector('.router-view-outer');
+        // Hide everything inside router-view-outer except the header
+        return Array.from(outer.children).filter(el => !el.classList.contains('router-view-header'));
+      }
+      // For all other sections: every direct child after the first (the header)
+      return Array.from(section.children).slice(1);
+    };
+
+    // Minimize toggle
+    const minBtn = section.querySelector('.win-minimize');
+    if (minBtn) {
+      minBtn.addEventListener('click', () => {
+        const collapsed = section.classList.toggle('collapsed');
+        getBodyEls().forEach(el => { el.style.display = collapsed ? 'none' : ''; });
+        minBtn.textContent = collapsed ? '+' : '−';
+      });
+    }
+
+    // Close
+    const closeBtn = section.querySelector('.win-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => { section.style.display = 'none'; });
+    }
+  });
 }
 
 /* ══════════════════════════════════════════════════════
