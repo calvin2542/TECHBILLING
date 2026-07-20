@@ -360,7 +360,7 @@ body {
 .fav-remove-btn:hover { color: #ef4444; background: rgba(239,68,68,.12); }
 
 /* ─── DASHBOARD CONTAINER ────────────────────────────────── */
-.dashboard-container { padding: 20px; width: 100%; max-width: 1400px; margin: 0 auto; }
+.dashboard-container { padding: 20px; width: 100%; max-width: 100%; margin: 0 auto; }
 .dashboard-title { font-size: 1.6rem; font-weight: 600; letter-spacing: .5px; margin-bottom: 20px; color: #fff; }
 
 /* ─── RAINBOW ENCLOSURES ─────────────────────────────────── */
@@ -468,11 +468,11 @@ body {
 }
 .router-cards-page {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
 }
 .router-mini-card {
-  width: 100px; height: 50px;
+  width: 100%; height: 50px;
   background-color: #112240; border: 1px solid #1e293b; border-radius: 5px;
   padding: 4px 6px;
   display: flex; flex-direction: column; justify-content: space-between;
@@ -598,8 +598,7 @@ body {
 .badge-red   { background-color: #cc2a36; }
 
 .router-status-scroll { max-height: 320px; overflow: hidden; }
-.router-status-grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
-@media (min-width: 640px) { .router-status-grid { grid-template-columns: repeat(2,1fr); } }
+.router-status-grid { display: grid; gap: 5px 20px; grid-template-columns: repeat(2, 1fr); }
 
 .router-status-card {
   background: #090c13; border-radius: 8px;
@@ -621,12 +620,12 @@ body {
 .router-title { color: #ccd6f6; font-weight: 600; font-size: .9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .router-sub-status { color: #8892b0; font-size: .72rem; display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
 .card-refresh-btn {
-  background: transparent; border: 1px solid #1a2233; color: #8892b0;
+  background-color: #10b981; border: 1px solid #10b981; color: #fff;
   padding: 2px 6px; border-radius: 4px; font-size: .65rem;
   display: flex; align-items: center; gap: 5px; cursor: pointer;
   width: 50px; height: 15px; margin-top: 4px; transition: all .2s ease;
 }
-.card-refresh-btn:hover { border-color: #00ff7f; color: #00ff7f; }
+.card-refresh-btn:hover { background-color: #059669; border-color: #059669; color: #fff; }
 .card-refresh-btn svg { width: 8px; height: 8px; }
 .card-right {
   color: #8892b0; font-size: .75rem; font-weight: 500;
@@ -927,6 +926,11 @@ body {
 }
 .form-btn:hover { background-color: #00d8f6; }
 
+/* ─── WINDOW CONTROLS: MINIMIZE / CLOSE ─────────────────── */
+.rainbow-enclosure.collapsed > *:not(:first-child),
+.live-rainbow-enclosure.collapsed > *:not(:first-child) { display: none !important; }
+.rainbow-enclosure.collapsed .router-view-outer > *:not(.router-view-header) { display: none !important; }
+
 /* ─── MOBILE SINGLE-COLUMN COLLAPSE ─────────────────────── */
 @media (max-width: 767px) {
   .dashboard-container { padding: 12px; }
@@ -934,10 +938,11 @@ body {
   .data-usage-panels { flex-direction: column; }
   .top-users-wrapper { flex-direction: column; }
   .bst-wrapper { flex-direction: column; }
-  .router-cards-page { grid-template-columns: repeat(3, 90px); }
+  .router-cards-page { grid-template-columns: repeat(3, 1fr); }
   .router-search-input { width: 120px; }
   .brand-title { font-size: .8rem; }
   .search-container { width: 70%; }
   .top-period-input { max-width: 110px; }
   .bst-period-label { display: none; }
 }
+
